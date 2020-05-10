@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css</title>
+    <style type="text/css">
+        /* 基本语法
+           选择器 声明块
+		*/
+        /* 元素选择器 */
+        h1 {
+            color: tomato;
+        }
+
+        /* id选择器（唯一标识） */
+        #red {
+            color: red;
+        }
+
+        /* class选择器(class可重复) */
+        .group1 {
+            color: blue;
+        }
+
+        .group2 {
+            font-size: 10px;
+        }
+
+        /* 所有元素 */
+        * {
+
+        }
+
+        /* 复合选择器(交集) */
+        div.group1 {
+            font-size: 30px;
+        }
+
+        /* 分组选择器（并集） */
+        h1, span, #red {
+
+        }
+
+        /* 关系选择器 */
+        /* 子元素选择器（父元素>子元素） */
+        div > span {
+
+        }
+
+        /* 后代元素选择器（祖先 后代） */
+        div span {
+
+        }
+
+        /* 兄弟元素选择器（前一个+下一个）两者之间无其他元素 */
+        #red + span {
+            color: orange;
+        }
+
+        /* 选择下面的所有兄弟元素 前一个~下一个*/
+        #red ~ p {
+
+        }
+
+        /* 属性选择器(带有目标属性的元素) */
+        [title] {
+
+        }
+
+        /* 属性选择器(带有目标属性并且符合指定值的元素) */
+        [title="标题"] {
+
+        }
+
+        /* 属性选择器(带有目标属性并且以指定值开头的元素) */
+        [title^="标题"] {
+
+        }
+
+        /* 属性选择器(带有目标属性并且以指定值结尾的元素) */
+        [title$="标题"] {
+
+        }
+
+        /* 属性选择器(带有目标属性并且包含指定值的元素) */
+        [title*="标题"] {
+
+        }
+
+        /* 伪类选择器 (：伪类标签)
+            first_child第一个孩子
+            last_child最后一个孩子
+            nth-child()第n个孩子
+        */
+        ul > li:nth-child(2) {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<h1 title="标题">标题</h1>
+
+<div class="group1">
+<span>span
+	<p>p</p>
+</span>
+
+</div>
+
+<p id="red">这是一段内容1</p>
+<span>span</span>
+<p class="group1 group2">这是一段内容2</p>
+<p class="group1">这是一段内容3</p>
+<p>这是一段内容4</p>
+<p>这是一段内容5</p>
+<p>这是一段内容6</p>
+<ul>
+    <li>一</li>
+    <li>二</li>
+    <li>三</li>
+    <li>四</li>
+</ul>
+</body>
+</html>

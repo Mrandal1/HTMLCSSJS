@@ -1,2 +1,4 @@
-# HTMLCSSJS
-study for js
+# HTML+CSS+JS
+study for HTML+CSS+JS
+
+

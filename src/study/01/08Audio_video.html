@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Audio and video</title>
+</head>
+<body>
+<!--  
+	audio用于引用外部音频文件
+	默认不允许用户控制
+	使用 controls控制(会出现播放组件)
+	autuplay自动播放(不太兼容大部分浏览器)
+	loop循环播放
+-->
+<audio src="C:\Users\11607\Music\Duca - ISI.mp3" controls="" autoplay="" loop></audio>
+<br>
+<!-- 还可以通过source指定文件 -->
+<audio controls="">
+    当前浏览器不支持播放音频
+    <source src="C:\Users\11607\Music\Duca - ISI.mp3" type="audio/mp3">
+
+    <!-- video引用视频
+    属性使用与audio基本一致
+     -->
+    <video src="blob:https://www.bilibili.com/4a214df6-89e9-4786-9a50-199405af5dac" controls=""></video>
+</audio>
+</body>
+</html>
