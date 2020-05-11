@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>extends</title>
+    <style type="text/css">
+        /* 样式的继承
+        并不是所有样式都会被继承
+        布局相关的，背景相关的样式不会被继承 */
+
+
+        /*选择器权重（值越大优先级越高）
+        内联样式（行内） 1000
+        id选择器			100
+        类和伪类选择器	10
+        元素选择器		1
+        通配选择器		0
+        继承样式			没有优先级
+
+        分析选择器所有优先级相加再决定总优先级（分组选择器单独计算）选择器的累加不会超过自己优先级
+        如果优先级相同，则优先使用靠下的样式
+
+        可以通过  样式！important获得最高优先级(慎用)
+          */
+
+        div {
+            color: yellow !important;
+        }
+
+        .red {
+            color: blue;
+        }
+
+        /* 长度单位 
+        像素px
+        相对于字体大小计算 1em=1font-size（10px）
+		先对于根元素（<html>等）字体大小rem
+        可以使用百分比表示相对大小（相对于父元素）
+
+        颜色单位
+		1 根据颜色名：red;blue...
+		2 RGB值： RGB(X,X,X) 
+		3 RGBA: z在RGB基础上增加一项不透明度RGB(X,X,X,A) A 0~1 0是完全透明 0.5半透明 1不透明
+		4 十六进制RGB #XXXXXX
+		5 HSL值与HSLA值 H-色相（0~360） S-饱和度（0~100%） L-亮度（0~100%） 
+
+
+
+
+        */
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+        }
+
+        .box2 {
+            width: 50%;
+            height: 50%;
+            background-color: yellow;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="box1" class="red">一个div</div>
+    <div class="box">
+        <div class="box2"></div>
+    </div>
+</body>
+
+</html>

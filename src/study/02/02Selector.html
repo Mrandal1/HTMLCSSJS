@@ -88,12 +88,70 @@
         }
 
         /* 伪类选择器 (：伪类标签)
-            first_child第一个孩子
-            last_child最后一个孩子
-            nth-child()第n个孩子
+        根据所有元素进行排序
+            :first_child第一个孩子
+            :last_child最后一个孩子
+            :nth-child()第n个孩子 
+           :nth-child(2n或even) 偶数位元素
+            :nth-child(2n+1或odd) 奇数位元素
+
+        根据同类型元素进行排序
+            :first-of-type 
+            :last-of-type
+            :nth-of-type
+            
+            :not() 将符合条件的元素排除
+
+        
+        超链接：
+        访问过:visited  只能修改颜色
+        
+        未访问过:link   
+
+        鼠标移过的状态:hover    
+        鼠标点击的状态：active
         */
         ul > li:nth-child(2) {
             color: blue;
+        }
+        ul>li:first-of-type{
+
+        }
+        ul>li:not(:nth-of-type(3)){
+            
+        }
+
+        a:link{
+        
+        }
+        a:visited{
+
+        }
+        a:hover{
+            color: pink;
+            font-size: 50px;
+        }
+        a:active{
+            color: red;
+        }
+        /* 伪元素选择器 */
+        /* ::first-letter首字母 */
+        /* ::first-line 第一行 */
+        /* ::selection 表示选中的内容*/
+        /* ::before元素起始位置; */
+        /* ::after元素的最后; */
+        /* before与after一般结合content使用 */
+        #red::first-letter{
+            font-size: 50px;
+        }
+        #red::first-line{
+            background-color: pink;
+        }  
+        .group2::selection{
+            background-color: pink;
+        }     
+        #red::before,#red::after{
+            content:"(加入的内容)";
         }
     </style>
 </head>
@@ -109,7 +167,7 @@
 
 <p id="red">这是一段内容1</p>
 <span>span</span>
-<p class="group1 group2">这是一段内容2</p>
+<p class="group1  group2">这是一段内容2</p>
 <p class="group1">这是一段内容3</p>
 <p>这是一段内容4</p>
 <p>这是一段内容5</p>
@@ -120,5 +178,6 @@
     <li>三</li>
     <li>四</li>
 </ul>
+<a href="https://www.baidu.com">超链接</a>
 </body>
 </html>

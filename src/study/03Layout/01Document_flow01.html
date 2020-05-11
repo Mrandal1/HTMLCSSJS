@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document flow</title>
+    <style type="text/css">
+    	.box1{
+
+    		/*内容区 元素所有子元素和文本都在内容区排列
+    		一般内容区由width和height属性设置
+    		*/
+    		width: 200px;
+    		height: 200px;
+    		/*边框 是盒子的边缘
+			设置边框至少要三个样式：
+			1 边框宽度 border-width 
+			border-XXX-size:（若不写，会指定默认3px）
+			四值 border-width: 上 右 下 左
+			三值 border-width: 上 左右 下 
+			两值 border-width: 上下 左右 
+			单值 border-width: 上下左右
+
+			2 边框颜色 border-color（若不写，会指定color的颜色）border-XXX-color
+			3 边框风格 border-style(默认值无边框) border-XXX-style
+			solid(实线) dotted(点状虚线)dashed(虚线)double(双线)
+    		*/
+			/*简写形式
+			border:solid red 10px;
+			border-top(bottom left right):solid red 10px;
+			*/
+    		border-width: 10px 20px 30px 40px;
+    		border-color: blue orange;
+    		border-style: solid;
+    		background-color: yellow;
+			/*内边距（内容区与边框之间的区域）(背景颜色会延伸到内边距上)
+			padding-top
+			padding-left
+			padding-right
+			padding-bottom
+			一个盒子的可见框的大小由内容区 内边距 和边框共同决定
+			可以简写
+			*/
+			padding: 20px;
+			/*外边距 margin不影响盒子可见框的大小
+			影响的是盒子的相对位置
+			margin-top
+			margin-XXX
+			可以简写
+			元素在页面中自左向右排列 默认情况下如果设置的是左和下外边距会移动元素自己 右下会移动其他元素
+			margin可以指定负值，表示反方向移动
+			*/
+			margin: 100px;
+    	}
+    	.box2{
+    		width: 70px;
+    		height: 70px;
+    		background-color: red;
+    	}
+    </style>
+</head>
+<body>
+<!-- 
+文档流是网页的基础，最底层
+一般元素都默认在文档流中排列
+元素的状态：1在文档流中
+		   2不在文档流中
+
+1在文档流中
+块元素	在文档中独占一行
+		默认宽度是父元素的全部
+		自上向下垂直排列
+		默认高度是被内容（子元素）影响
+行内元素
+		不独占一行
+		自左向右水平排列。如果一行无法容纳，剩下的内容换到接下来一行继续排列
+		行内元素的默认高度与宽度都是受内容大小控制
+
+ -->
+ <!-- 
+
+盒子模型
+所有元素都是一个矩形模型
+盒子：
+	内容区（content）
+	内边距（padding）
+	边框（border）
+	外边距（margin）
+
+  -->
+ <div class="box1">
+<div class="box2">div2</div>
+ </div>
+ <div class="box3"></div>
+<span id="id1">span1</span>
+<span id="id2">span1</span>
+
+</body>
+</html>

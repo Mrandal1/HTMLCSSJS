@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document flow</title>
+    <style content="text/css">
+    	/* 元素的水平布局
+				元素在其父元素水平方向的位置由以下属性共同决定：
+				1 margin-left:
+				2 border-left
+				3 padding-left
+				4 width
+				5 padding-right
+				6 border-right
+				7 margin-right;
+				子元素在其父元素中需满足以上七个值总和等于父元素内容区总和
+				若不等于，称作过度约束，以上属性会自动调整
+				以上七个值有三个值可以设置auto :width margin-left margin-right
+				
+				调整方式：
+				1 以上七个值未设auto的情况下，先调整margin-right 来达到条件
+				2 如果一个值为auto,则会自动调整为auto的值以使等式成立
+				3 如果一个宽度与一个外边距的值为auto,则会自动调整为宽width的值最大以使等式成立
+				4 如果三个属性值都为auto,则会自动调整width为最大以使等式成立
+				2 如果两个外边距值为auto,则会自动调整margin为相同的值以使等式成立
+    		 */
+    		 /* 垂直布局
+    		 默认情况下父元素的高度被子元素内容撑开
+    		 子元素的大小大于父元素会发生溢出 此时可以通过设置overflow处理
+    		 overflow属性：
+    		 1 visible 默认值(可见溢出)
+    		 2 hidden 裁剪溢出内容
+    		 3 scroll 生成滚动条显示溢出内容
+    		 4 auto 根据需要生成滚动条
+    		 overflow-x表示单独设置横轴
+    		 overflow-y表示单独设置纵轴
+
+    		  */
+        .box1{
+            width: 400px;
+            height: 400px;
+            background-color: aqua;
+            border: solid red;
+            overflow: auto;
+
+        }
+        .box2{
+            width: 130px;
+            margin:0 auto;
+            height: 500px;
+            background-color:green;
+            border: solid;
+        }
+    </style>
+</head>
+<body>
+<div class="box1">
+    <div class="box2"></div>
+</div>
+</body>
+</html>
