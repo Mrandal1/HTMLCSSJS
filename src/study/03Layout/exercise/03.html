@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../../reset.css">
+    <style>
+        body {
+            background-color: #bfa;
+        }
+
+        .mod1 {
+            width: 300px;
+            height: 358px;
+            margin: 50px auto;
+            background-color: white;
+            border-top: 1px solid #ddd;
+        }
+
+        .mod-title {
+
+            padding-top: 6px;
+            padding-bottom: 10px;
+            width: 80px;
+            margin-top: 10px;
+        }
+
+        .mod-title h2 a {
+            color: #404040;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .list {
+            margin-top: 10px;
+            padding-left: 15px;
+            list-style: square;
+        }
+
+        .bg h3 {
+            margin-top: -35px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 16px;
+            color: #fff;
+            margin-left: 30px;
+            font-weight: bold;
+        }
+
+        .list li {
+            margin-left: -10px;
+            margin-bottom: 17px;
+
+            font-weight: bold;
+        }
+
+        .list li a {
+            font-size: 14px;
+            color: #666666;
+            margin-left: 1px;
+        }
+		 ul li a:hover{
+            color: red;
+        }
+
+		        
+        .list li::before {
+            content: '♦';
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="mod1">
+    <div class="mod-title">
+        <h2>
+            <a href="#">军事</a>
+            <i>·</i>
+            <a href="#">航空</a>
+        </h2>
+    </div>
+    <div class="img">
+        <a href="#">
+            <img src="https://cms-bucket.ws.126.net/2020/0511/d52fd551j00qa5969003lc000s600e3c.jpg?imageView&thumbnail=300y150&type=webp">
+            <div class="bg"><h3>这一组俄制军机摄影角度太绝了</h3></div>
+        </a>
+    </div>
+    <!--新闻列表 -->
+    <ul class="list">
+        <li>
+            <a href="http://war.163.com/photoview/4T8E0001/2308368.html#p=FCBC0KSU4T8E0001NOS">委内瑞拉军队逃兵被捕，参加失败政变</a>
+        </li>
+        <li>
+            <a href="http://war.163.com/photoview/4T8E0001/2308366.html#p=FCBAQR7N4T8E0001NOS">土库曼斯坦胜利日阅兵意大利步枪亮眼</a>
+        </li>
+        <li>
+            <a href="http://news.163.com/air/photoview/56NT0001/2308370.html#p=FCBI3FC056NT0001NOS">中国派遣医疗专家组赴津巴布韦援助抗疫
+            </a>
+        </li>
+        <li>
+            <a href="https://news.163.com/air/20/0511/11/FCBHTDOS00019JPB.html">中银航空租赁与美西南签购机回租协议
+            </a>
+        </li>
+
+    </ul>
+</div>
+</body>
+</html>

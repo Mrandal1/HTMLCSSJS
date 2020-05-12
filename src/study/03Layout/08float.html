@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+    	/* 高度塌陷：父元素未设置高度与宽度且子元素是浮动状态，此时父元素会失去高度与宽度 */
+
+    	/* BFC(块级格式化环境)是css中的隐藏属性
+    	开启后会变成一个独立的布局区域 
+    	开启后特点·：
+    	1 开启的元素不会被浮动元素覆盖
+    	2 开启的元素子元素与父元素外边界不会重叠
+    	3 开启的元素可以包含浮动子元素
+    	通过特殊方式开启BFC:
+    	1设置元素浮动；（不推荐）
+    	2将元素设置为行内块元素；（不推荐）
+    	3 设置overflow为 非visible值一般设置hidden属性*/
+    	.outer{
+    		border:1px solid red;
+    		overflow: hidden;
+    	}
+    	.inner{
+    		width: 100px;
+    		height: 100px;
+    		background-color: blue;
+    		float: left;
+    	}
+    </style>
+</head>
+<body>
+<div class="outer">
+	<div class="inner"></div>
+</div>
+</body>
+</html>

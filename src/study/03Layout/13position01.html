@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+    	/* 对于开启了定位的元素，可以通过z-index属性指定元素层级
+		层级越高，优先级越高,层级一样，选择结构（代码位置）靠下的
+		祖先元素层级永远高过后代元素
+    	 */
+    	.box1{
+    		width: 200px;
+    		height: 200px;
+    		background-color: #fba;
+    		position: absolute;
+    		z-index: 1;
+    	}
+    	.box2{
+    		width: 200px;
+    		height: 200px;
+    		background-color: #bfa;
+    		position: absolute;
+    		top: 50px;
+    		left: 50px;
+    	}
+    	.box3{
+    		width: 200px;
+    		height: 200px;
+    		background-color: orange;
+    		position: absolute;
+    		top: 100px;
+    		left: 100px;
+    	}
+    	.box4{
+    		width: 150px;
+    		height: 150px;
+    		background-color: red;
+    		position: absolute;
+    		
+    	}
+    </style>
+</head>
+<body>
+<div class="box1">1</div>
+<div class="box2">2</div>
+<div class="box3">3
+<div class="box4"></div></div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+    	/* box-sizing用于设置盒子尺寸计算方式
+    			1 content-box 默认值 宽度与高度设置内容区大小
+    			2 border-box 宽度与高度设置内容区、内边距、边框的总大小
+    			3 */
+                /*outline 设置盒子轮廓线 设置与border一致
+                轮廓不会影响可见框大小（布局）*/
+                /*box-shadow用于设置元素阴影，不会影响布局
+                X(水平位置正值向右移动) Y（垂直偏移正值向下移动）Z(设置模糊半径值越大越模糊)  C（颜色）*/
+                /*设置圆角（半径大小）
+                border-radius:同时设置四个角圆角 顺序为：左上-右上-右下-左下;
+                 border-top-left-radius:X(水平方向),Y（垂直方向）
+                  border-X-X-radius:*/
+    	.box1{
+    		width: 200px;
+    		height: 200px;
+    		background-color: #fba;
+    		padding: 10px;
+    		border: 10px solid red;
+    		box-sizing: border-box;
+            box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+            border-radius: 10px;
+    	}
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: #fba;
+            padding: 10px;
+            border: 10px solid red;
+            box-sizing: border-box;
+            box-shadow: 10px 10px 5px rgba(0,0,0,.5);
+            border-top-left-radius: 15px 30px;
+            border-radius: 100px;
+        }
+        /*测试Outline属性*/
+        .box1:hover{
+            outline: 10px solid black;           
+           /* border: 10px solid black;*/
+        }
+    </style>
+</head>
+<body>
+<div class="box1">
+	
+</div>
+<span>文字</span>
+<div class="box2"></div>
+</body>
+</html>

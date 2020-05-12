@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+    	body{
+    		font-size: 50px;
+    	}
+    	/* position定位
+    	通过使用定位可以将元素摆到任意位置(使用偏移量offset设置位置)
+    	偏移量:上下左右;
+    	static 默认值 未开启定位
+    	relative 相对定位
+    	特点：开启后若未设置偏移量，不会变化
+    	参照点为元素在文档流中的位置
+    	相对定位会提升元素层级（不会脱离文档流）
+    	absolute 绝对定位
+		1 开启后如果不设置偏移量，元素位置不会变化
+		2 开启后从文档流脱离
+		绝对定位是相对于包含块进行定位的
+		包含块：离当前元素最近的祖先块元素；
+		绝对定位中包含块是离当前元素最近的开启了定位的祖先块元素
+    	fixed 固定定位
+		1 特殊的绝对定位，永远参照浏览器的视口定位
+    	sticky 粘滞定位
+
+    	 */
+    	.box1{
+    		width: 200px;
+    		height: 2000px;
+    		background-color: #fba;
+    	}
+    	.box2{
+    		width: 200px;
+    		height: 200px;
+    		background-color: #bfa;
+    		/*position*/
+    		/*position: relative;
+    		bottom: 200px;
+    		left: 200px;*/
+    		/*position: absolute;
+    		left: 200px;*/
+    		position: fixed;
+    		top:0px;
+    		left: 0px;
+    		/*position: sticky;
+    		top:0px;
+    		left: 0px;*/
+    }
+    	.box3{ 
+    		width: 300px;
+    		height: 300px;
+    		background-color: orange;
+    	}
+    </style>
+</head>
+<body>
+<div class="box1">1</div>
+<div class="box2">2</div>
+<div class="box3">3</div>
+</body>
+</html>

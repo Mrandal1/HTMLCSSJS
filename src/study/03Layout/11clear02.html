@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+    	.box1{
+    		width: 200px;
+    		height: 200px;
+    		background-color: #fba;
+    	}
+    	.box2{
+    		width: 100px;
+    		height: 100px;
+    		background-color: orange;
+    		margin-top: 100px;
+    	}
+    	/*使用before与table防止子元素对父元素的影响(解决外边距重叠问题)*/
+    	.box1::before{
+    		content: "";
+    		display: table;
+    		clear: both;
+    	}
+    </style>
+</head>
+<body>
+<div class="box1">
+	<div class="box2"></div>
+</div>
+</body>
+</html>

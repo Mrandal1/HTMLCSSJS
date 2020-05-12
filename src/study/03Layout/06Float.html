@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Float</title>
+    <style type="text/css">
+    	/* 通过浮动可以使一个元素向其父元素的左侧或右侧浮动
+    	float：
+    	1 none 默认值 不浮动
+    	2 left 向左
+    	3 right 向右 
+    	使用浮动后元素水平布局的等式条件不必须成立,
+    	同时从文档流中脱离，不在占用文档流位置
+    	元素不会从父元素中移出
+    	浮动元素不会盖住其他浮动元素
+    	浮动元素无法浮动到文档流元素左右
+    	浮动元素不会超过上一个浮动兄弟元素的高度
+
+		浮动元素不会盖住文字，可以实现文字环绕效果
+		浮动元素从文档流脱离后，一些特性会变化
+		1 块元素不再独占一行
+		2 块元素宽度与高度都是被内容撑开
+		3 行内元素脱离后成为块元素
+    	*/
+    	.box1{
+    		width: 200px;
+    		height: 200px;
+    		background-color: #fba;
+    		float: left;
+    	}
+    	.box2{
+    		width: 200px;
+    		height: 200px;
+    		background-color: #bfa;
+    		float: left;
+    	}
+    </style>
+</head>
+<body>
+<div class="box1"></div>
+<div class="box2"></div>
+</body>
+</html>
