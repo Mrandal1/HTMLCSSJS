@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href=../fontawesome/css/all.css>
+    <style type="text/css">
+    	
+    	p{
+    		/*字体样式
+    		color
+    		font-size字体大小
+    		em 相当于当前元素的一个font-size
+    		rem 相当于根元素的一个font-size
+    		font-family 字体族（大类别）
+    			serif衬线字体
+    			sans-serif非衬线字体
+    			monospace 等宽字体
+    		*/
+		/*@font-face为用户提供字体*/
+		/*图标字体
+		将图标设置为字体，通过@font-face引入
+		使用font awesome图标库
+		通过类名 使用图标
+		fas XX
+		fab XX*/
+    	}
+    	ul{
+    		list-style: none;
+    	}
+    	/*利用伪元素设置图片字体*/
+    	li::before{
+    		/*1 设置格式*/
+    		 font-family: 'Font Awesome 5 Free';
+  			font-weight: 900;
+  			/*2 引入代号*/
+    		content: '\f1b0';
+    	}
+    </style>
+</head>
+<body>
+<p>hello,</p>
+<i class="fas fa-bell" style="font-size: 200px; color: red"></i>
+<ul>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+<!-- 使用unicode -->
+<i class="fab">&#xf297;</i>
+<i class="fa fa-angle-down" aria-hidden="true"></i>
+<i class="fa fa-map-marker" aria-hidden="true " style="font-size: 200px;"></i>
+</body>
+</html>

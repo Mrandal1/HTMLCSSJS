@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+    	/* 行高指的是文字占有的实际高度 会上下平均分配
+    	整数表示指定行高为字体大小的倍数
+    	行高可以设置行间距 行间距=行高-字体大小
+    	字体框：就是字体存在的格子 */
+    	/*简写font: size/line-height family*/
+    	/*font-weight:字体的加粗
+    	normal默认不加粗
+    	bold加粗
+    	font-style：字体风格
+    	italic斜体*/
+
+    	/*文本水平对齐：
+    	text-align：
+    	1 left 左对齐
+    	2 right 右对齐
+    	3 center 居中对齐
+    	4 justify 两端对齐*/
+    	/*垂直对齐
+    	vertical-align：
+    	1 baselinem默认基线对齐
+    	2 top 顶部对齐
+    	3 bottom 底部对齐
+    	4 middle居中对齐*/
+    	/*white-space：设置网页处理空白
+    	1 normal默认值 
+    	2 nowrap不换行 配合overflow、text-overflow使用
+    	3 pre保留空白*/
+    	div{
+    		width: 300px;
+    		border:1px solid black;
+    		/*font-size: 20px;
+    		line-heigvht: 1.5;*/
+	 		font:20px/5 "Microsoft Himalaya";
+	 		white-space: nowrap;
+	 		overflow: hidden;
+	 		text-overflow: ellipsis;
+    	}
+
+    </style>
+</head>
+<body>
+<div>你好！你好！你好！你好！你好！你好！你好！你好！</div>
+</body>
+</html>

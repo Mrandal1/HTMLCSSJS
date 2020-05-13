@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../../reset.css">
+    <link rel="stylesheet" type="text/css" href=../../fontawesome/css/all.css>
+    <style type="text/css">
+    	body{
+    		font: 12px/1.5 Microsoft YaHei,Heiti SC,tahoma,arial,Hiragino Sans GB,"\5B8B\4F53",sans-serif;
+    	}
+        .content {
+            margin: auto;
+            width: 1190px;
+            height: 30px;
+            
+        }
+
+        .head {
+            height: 30px;
+            line-height: 30px;
+            background-color: #e3e4e5;
+            border:1px solid rgb(204,204,204);
+        }
+
+        .left li {
+            float: left;
+            width: 55px;
+            margin: auto 10px;
+
+			position: relative;
+        }
+			.city{
+				position: absolute;
+				top:31px;
+				left: 187px;
+				display: none;
+				width: 320px;
+				height: 460px;
+				background-color: white;
+				border:1px solid rgb(204,204,204);
+				box-shadow: 0 2px 2px rgba(0,0,0,.2);
+				z-index: 10;
+			}
+			.citylist{
+				
+				margin:5px auto;
+				height: 300px;
+				width: 300px;
+				margin-left: 10px;
+				float: left;
+			}
+			.divs{
+				float: left;
+				
+				margin: 5px 20px;
+
+
+			}
+			.myjdlist{
+				position: absolute;
+				top:30px;
+				left: 234px;
+				display: none;
+				width: 280px;
+				height: 200px;
+				background-color: white;
+				border:1px solid rgb(204,204,204);
+			}
+			.left:hover  .area,.left:hover  .city {
+				display:block;
+				border-top: white;
+				background-color: white;
+				border-left :1px solid rgb(204,204,204);
+				border-right :1px solid rgb(204,204,204);
+			}
+			.myjd:hover,.myjd:hover .myjdlist{
+				display:block;
+				border-top: white;
+				background-color: white;
+				/*border-left :1px solid rgb(204,204,204);
+				border-right :1px solid rgb(204,204,204);*/}
+			.area:hover{
+				background-color: white;
+				
+			}
+			.divs a:hover{
+				background-color: #e3e4e5;
+			}
+        .right {
+            float: right;
+            position: relative;
+
+        }
+        .right li:not(.space){
+        	float: left;
+        	margin-right: 8px;
+        	padding-left: 7px;
+        	height: 30px;
+    		line-height: 30px;
+        	color: #999;
+        }
+        .login :last-of-type,.my2 a{
+        	color: #f00;
+        }
+        .space{
+        	float: left;
+        	 overflow: hidden;
+		    margin: 11px 5px 0;
+		    width: 1px;
+		    height: 10px;
+		    background-color: #ccc;
+        }
+		.fa{
+		    width: 4px;
+		    height: 12px;
+		    line-height: 12px;
+		    margin: 7px 0px 5px ;
+		}
+		.left a:hover , .right a:hover{
+			color: #f00;
+		}
+    </style>
+</head>
+<body>
+<div class="head">
+    <div class="content">
+        <ul class="left">
+            <li class="area">
+            	<i class="fas fa-map-marker-alt" style="color: red; margin-left:7px"></i>
+                <a href="">地区</a>
+            </li>
+            <div class="city">
+            	
+<div class="citylist">
+
+<div class="divs"><a href="">浙江</a></div>
+<div class="divs"><a href="">上海</a></div>
+<div class="divs"><a href="">广东</a></div>
+<div class="divs"><a href="">江苏</a></div>
+<div class="divs"><a href="">湖南</a></div>
+<div class="divs"><a href="">福建</a></div>
+<div class="divs"><a href="">内蒙古</a></div>
+<div class="divs"><a href="">北京</a></div>
+<div class="divs"><a href="">湖北</a></div>
+<div class="divs"><a href="">山东</a></div>
+<div class="divs"><a href="">山西</a></div>
+
+
+
+</div>
+
+
+
+            </div>
+        </ul>
+        <ul class="right">
+            <li class="login">
+                <a href="">你好，请登陆</a>
+                &nbsp;&nbsp;
+                <a href="">免费注册</a>
+            </li>
+            <li class="space">|</li>
+
+            <li class="myorder">
+                <a href="">我的订单</a>
+            </li>
+            <li class="space">|</li>
+
+            <li class="myjd">
+                <a href="">我的京东</a>               
+                <i class="fa fa-angle-down" ></i>
+                <div class="myjdlist"></div>
+            </li>
+            
+
+            <li class="space">|</li>
+            <li class="my1">
+                <a href="">京东会员</a>
+            </li>
+            <li class="space">|</li>
+            <li class="my2">
+                <a href="">企业采购</a>
+                <i class="fa fa-angle-down" ></i>
+            </li>
+            <li class="space">|</li>
+
+            <li class="my3">
+                <a href="">客户服务</a>
+                <i class="fa fa-angle-down" ></i>
+            </li>
+            <li class="space">|</li>
+
+            <li class="my4">
+                <a href="">网站导航</a>
+                <i class="fa fa-angle-down" ></i>
+            </li>
+            <li class="space">|</li>
+
+            <li class="my5">
+                <a href="">手机京东</a>
+            </li>
+            
+
+
+        </ul>
+    </div>
+
+</div>
+</body>
+</html>
