@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../../reset.css">
+    <link rel="stylesheet" type="text/css" href=../../fontawesome/css/all.css>
+    <style>
+        .container {
+            width: 315px;
+            background-color: #e3e4e5;
+            margin: 50px auto;
+            box-shadow: 0 0 10px;
+            border-radius: 10px;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .info {
+            margin: 10px 30px;
+
+        }
+
+        .info .title {
+            padding-bottom: 14px;
+            ;
+        }
+
+        .category .type {
+            padding-bottom: 5px;
+            font-size: 13px;
+            display: inline-block;
+        }
+
+        .fa-map-marker-alt {
+            color: red;
+            font-size: 13px;
+            padding-right: 5px;
+        }
+
+        .content {
+            font-size: 0;
+
+        }
+
+        .content p {
+            font-size: 14px;
+            padding: 15px 0px;
+            color: #8E8E8E;
+            line-height: 20px;
+
+        }
+
+        .content p::before {}
+
+        .starwrapper {
+            height: 30px;
+
+            border-top: 1px solid #cccccc;
+            padding-top: 10px;
+        }
+
+        .starwrapper .stars {
+            float: left;
+            color: gray;
+        }
+
+        .starwrapper .stars :nth-child(n):hover {
+
+            color: yellowgreen;
+        }
+
+        .starwrapper .stars .light {
+            color: yellowgreen;
+        }
+
+        .weibo :nth-child(n) :hover {
+            color: yellowgreen;
+        }
+
+
+        .starwrapper .share {
+            float: right;
+        }
+
+        .fa-weibo {
+            padding-top: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--设置主体-->
+    <div class="container">
+        <!--设置图片容器-->
+        <div class="img-wrapper">
+            <!-- 设置图片 -->
+            <img
+                src="https://bkimg.cdn.bcebos.com/pic/fd039245d688d43f87941e658156c51b0ef41bd58d59?x-bce-process=image/resize,m_fill,w_360,h_280,align_50">
+        </div>
+        <!-- 设置图片信息 -->
+        <div class="info">
+            <!-- 标题信息 -->
+            <div class="title">
+                <h1>花木兰</h1>
+            </div>
+            <!-- 类型 -->
+            <div class="category">
+                <a href="">
+                    <i class=" fas fa-map-marker-alt"></i>
+                </a>
+                <h2 class="type">动画</h2>
+            </div>
+            <!-- 主题内容 -->
+            <div class="content">
+                <P>&nbsp;&nbsp;《花木兰》是由华特迪士尼影片公司出品，妮基·卡罗执导
+                    <!-- 
+                       -->刘亦菲、甄子丹领衔主演，巩俐、李连杰特别
+                    <!--
+                       -->出演的真人版剧情电影 [1] ，定档于2020年7月24日在北美上映</P>
+            </div>
+            <div class="starwrapper">
+                <!-- 左侧评价区-->
+                <ul class="stars">
+                    <li class="fa fa-star light"></li>
+                    <li class="fa fa-star light"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                </ul>
+                <!-- 右侧分享区 -->
+                <ul class="share">
+                    <li class="weibo ">
+                        <a href="">
+                            <i class="fab fa-weibo " style="color: gray;"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

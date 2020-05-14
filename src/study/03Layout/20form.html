@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+    	/* 表单 form
+    			用于提交数据
+    			属性：acion 表单提交的地址 */
+    			input[name='pwd'] , select[name='ch']{
+    				display: block;
+    			}
+    			input{
+    				margin: 5px;
+    			}
+    </style>
+</head>
+<body>
+<form action="" autocomplete="off">
+	<!-- 添加表单项 1 文本框 需要指定name
+		autocomplete 用于设置提交历史項呈现 on为开启 off为关闭
+		readonly将表单项设置为只读 可以提交
+		将表单项设置为禁用  不可以提交
+		autofocus 指定表单项自动获得焦点-->
+	<input type="text" name="username" autocomplete="off" readonly="" disabled="" autofocus="">
+	<!-- 提交按钮  value指定按钮文本-->
+	<!-- reset 重置表单按钮 -->
+	<input type="reset" name="" value="重置按钮">
+	<input type="submit" value="注册" name="">
+	<!-- 普通按钮 可以通过 js 设置动作 -->
+	<input type="button" name="aq" value="普通按钮" >
+	<!-- 添加表单项 2 密码框 需要指定name-->
+    <input type="password" name="pwd">
+	
+	<!-- 单选按钮 (选择框) 
+		value设置按钮的内容
+		checked设置默认选中的按钮-->
+	男<input type="radio" name="radio" value="male" checked="">
+	女<input type="radio" name="radio" value="female">
+	<!-- 多选按钮 -->
+	<input type="checkbox" name="h" value="apple" checked="">
+	<input type="checkbox" name="h" value="orange">
+	<input type="checkbox" name="h" value="melon">
+	<!-- 下拉列表
+		option 在 select中设置下拉内容 通过selected指定默认选项
+		 -->
+	<select name="ch">
+		<option value="a" >a</option>
+		<option value="b">b</option>
+		<option value="c" selected="">c</option>
+
+		
+
+	</select>
+	<br>
+
+</form>
+</body>
+</html>

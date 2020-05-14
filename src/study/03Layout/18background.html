@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        /* 设置渐变(基于背景图片)
+        多个颜色等距分配
+        liner-gradient 沿直线发生变化（默认从上之下渐变）
+        可以指定方向：to left
+                    to right...
+                    指定具体的度数 XXXdeg
+                        表示圈 XXXturn .5turn
+
+        repeating-liner-gradient 平铺的线性渐变
+
+        radial gradient()径向渐变（发散）
+        */
+        .box1 {
+            width: 100px;
+            height: 100px;
+            /*线性渐变*/
+            /*background-image: linear-gradient(blue,darkblue);*/
+            /*设置渐变方向*/
+            background-image: linear-gradient(to left, blue, darkblue);
+            /*制定具体度数*/
+            background-image: linear-gradient(45deg, blue, darkblue);
+            /*指定渐变的分布范围*/
+            background-image: linear-gradient(red 50px, yellow);
+
+        }
+
+        .box2 {
+        	margin: 40px;
+            width: 100px;
+            height: 100px;
+            /*平铺线性渐变*/
+            background-image:repeating-linear-gradient(red 50px,yellow); 
+        }
+        .box3{
+        	margin: 40px;
+            width: 100px;
+            height: 100px;
+            /*可以指定大小*/
+            background-image: radial-gradient(50px 50px,red,yellow);
+            border-radius: 50%;
+        }
+    </style>
+
+</head>
+<body>
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+</body>
+</html>

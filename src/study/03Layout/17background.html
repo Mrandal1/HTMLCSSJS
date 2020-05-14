@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+    	/* 设置背景图片
+    	 background-img:url();
+    	 若背景图片小于图片，图片会自动平铺
+    	 若背景图片大于图片，图片会裁剪
+    	 background -repeat：设置背景重复方式
+    	 1 repeat 默认值 沿想x，y轴方向重复
+    	 2 repeat-x
+    	 3 repeat-y 
+    	 4 no-repeat
+
+    	 background -position 设置位置
+    	 1 使用关键词 top center。。。
+    	 2 使用像素位置 类似阴影/
+
+    	 /* 设置背景范围 background -clip
+    	 1 border-box;默认值 背景会出现在边框下面
+    	 2 padding-box 背景不会出现在边框 只出现在内容区和内边距
+    	 3 content-box 只出现在内容区*/
+
+    	 /* background -origin 背景图片偏移量计算的原点
+    	 padding-box 默认值 position从内边距开始计算
+    	 content-box  position从内容区开始计算
+    	  border-box  position从边框开始计算*/
+
+    	  /*background -size 设置大小
+    	  第一值表示宽度
+    	  第二值表示高度
+    	  cover 比例不变 填满元素
+    	  contain 比例不变 完整显示*/
+
+    	  /*background -attachment 背景图片是否岁元素移动
+    	  1 scroll 默认值 滚动
+    	  2 fixed 固定*/
+		.box1{
+			border:20px   red double;
+			margin: 10px;
+			padding: 40px;
+			width: 200px;
+			height: 200px;
+			background-color: #bfa;
+			background-image: url(./1.jpg);
+			background-position: top left;
+			background-clip: content-box;
+			background-size: 50px auto;
+		}
+    </style>
+</head>
+<body>
+<div class="box1">
+	
+</div>
+</body>
+</html>
