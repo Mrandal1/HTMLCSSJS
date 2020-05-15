@@ -1,1 +1,266 @@
 /*   主页 */
+.top-bar-wrapper{
+    height:40px ;
+    background: #333;
+    font-size: 12px;
+    position: relative;
+    display: block;
+}
+.container{
+    margin-right: auto;
+    margin-left: auto;
+    height: 40px;
+}
+.container ul:not(.shop-car) :hover a{
+    color: #fff;
+}
+/* 二维码 */
+.app .qrcode{
+    /* display: none; */
+    height: 0;
+    overflow: hidden;
+    width: 124px;    
+    position: absolute;
+    left: -40px;
+    background-color: #fff;
+    line-height: 1;
+    box-shadow: 0 0 10px rgba(0 , 0, 0, .3);
+    text-align: center;   
+    transition:height 0.3s;
+}
+.app-li:hover .qrcode
+,.app-li:hover::after{
+    height: 148px;
+    display: block;
+    z-index: 30;
+}
+
+.app-li{
+    position: relative;
+}
+.app-li:hover>.app::after{
+    content: '';
+    
+    width: 0;
+    height: 0;
+    /* 开启绝对定位 */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+   margin: auto;
+    border: 8px solid transparent;
+    border-top: none;
+    border-bottom-color:#fff ;
+
+
+}
+/* 二维码 图片*/
+.app .qrcode img{
+    width: 90px;
+    margin: 16px 17px;
+    margin-bottom: 10px;
+}
+.app .qrcode span{
+    color: black;
+    font-size: 14px;
+    color: #333;
+}
+.right .shop-car:hover a{
+    color: #ff6700;
+}
+.right .shop-car:hover {
+    background-color: #fff;
+}
+/*  设置购物车详情  */
+.shop-car-detail{
+    height: 0px;
+    overflow: hidden;
+    width: 320px;    
+    position: absolute;
+    right:178px ;
+    top: 40px;
+    background-color: #fff;
+    line-height: 1;
+    /* box-shadow: 
+      0 0 0px rgba(0 , 0, 0, .2),
+      0 0 10px rgba(0 , 0, 0, .2),
+      0 0 10px rgba(0 , 0, 0, .2),
+      0 0 10px rgba(0 , 0, 0, .2); */
+    text-align: center;   
+    transition:all 0.2s;  
+}
+.shop-car-detail span{
+    display: block;
+    margin: 0 20px 20px;
+    padding: 45px 0 20px;
+    color: #424242;
+}
+.shop-car:hover .shop-car-detail{
+    display: block;
+    height: 100px;
+    box-shadow: 
+    0 8px 10px rgba(0 , 0, 0, .2);
+    z-index: 30;
+}
+
+.left  li a ,.right li a {
+    font-size: 12px;
+    color: #b0b0b0;
+}
+ .right  li,.left li{
+    float: left;
+    margin: 0 6px;
+    height: 40px;
+    line-height: 40px;
+}
+.left li:not(.space-line){
+     margin: 0 0;
+}
+.right ul,.right-server li ,shop-car li {
+    float: left;
+}
+.right-server{
+    margin-right: 40px;
+}
+.right {
+    float: right;
+    margin-right: 20px;
+}
+.shop-car{
+    background-color: #424242;
+    
+}
+
+
+.space-line {
+    line-height: 40px;
+    font-size: 12px;
+    margin: auto 3.6px;
+    color: #424242;
+    font-family: sans-serif;
+}
+/* 设置第二层头部 */
+.header-container{
+    height: 100px;
+
+}
+.header-container .header-logo{
+    float: left;
+    margin-top: 22px;
+    width: 55px;
+    height: 55px;
+    position: relative;
+    overflow: hidden;
+}
+.header-container .header-logo .mi{
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    left: 0px;
+    background-color: #ff6700;
+    background-image: url("../img/mi-logo.png");
+    background-position: center;
+    transition: left 0.2s;
+}
+.header-container .header-logo .home{
+    left: -55px;
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    background-color: #ff6700;
+    background-image: url(../img/mi-home.png);
+    background-position: center;
+    transition: left 0.2s;
+}
+/* 设置logo动画 */
+.header-container .header-logo:hover .mi{
+    left: 55px;
+}
+.header-container .header-logo:hover .home{
+    left: 0px;
+}
+/* 设置导航 */
+.header .nav{
+    float: left;
+}
+.nav li{
+    float: left;
+}
+.header{
+    position: relative;
+}
+.header-cate .nav{
+    height: 100px;
+    line-height: 100px;
+    margin-left: 7px;
+    padding-left: 58px;
+}
+.header-cate .nav li a{
+    font-size: 16px;
+    margin-right: 20px;
+}
+/* 隐藏全部商品 */
+.all-goods{
+    visibility: hidden;
+}
+.nav li:hover a{
+    color: #ff6700;
+}
+/* 全部商品详情 */
+.nav .goods-info{
+    height: 0px;
+    overflow: hidden;
+    /* height: 228px; */
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    box-shadow: none;
+    /* border-top:1px solid rgb(224,224,224);
+    box-shadow: 0 5px 2px rgba(0 , 0, 0, .2); */
+    transition: height 0.3s, box-shadow 0.2s;
+}
+.nav li:not(:first-of-type):not(:nth-child(10)):not(:nth-child(9)):hover ~.goods-info,
+.goods-info:hover{
+    border-top:1px solid rgb(224,224,224);
+    box-shadow: 0 4px 10px rgba(0 , 0, 0, .2);
+    height: 228px;
+    z-index: 24;
+}
+/*  */
+.search-wrapper{
+    width: 296px;
+    height: 50px;
+    border: 1px solid #e0e0e0;
+    float: right;
+    margin-top: 25px;
+}
+/* 搜索栏 */
+.search-wrapper .search-input{
+    
+    float: left;
+    height: 50px;
+    padding: 0px 10px;
+    border: none;
+    width: 224px;
+    font-size: 16px;
+
+}
+/* 获取焦点后 */
+.search-wrapper .search-input:focus{
+    outline: 1px solid #ff6700;
+    
+}
+.search-wrapper .search-btn{
+    float: left;
+    height: 50px;
+    width: 52px;
+    border:none;
+    padding: 0px;
+    background-color: #fff;
+    color: #616161;
+    font-size: 14px;
+    border-left: 1px solid #e0e0e0;
+}
