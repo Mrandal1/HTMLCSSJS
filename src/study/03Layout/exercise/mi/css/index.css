@@ -1,3 +1,6 @@
+body{
+    height: 1500px;
+}
 /*   主页 */
 .top-bar-wrapper{
     height:40px ;
@@ -27,12 +30,13 @@
     box-shadow: 0 0 10px rgba(0 , 0, 0, .3);
     text-align: center;   
     transition:height 0.3s;
+    z-index: 1000;
 }
 .app-li:hover .qrcode
 ,.app-li:hover::after{
     height: 148px;
     display: block;
-    z-index: 30;
+   
 }
 
 .app-li{
@@ -40,7 +44,6 @@
 }
 .app-li:hover>.app::after{
     content: '';
-    
     width: 0;
     height: 0;
     /* 开启绝对定位 */
@@ -66,10 +69,12 @@
     font-size: 14px;
     color: #333;
 }
-.right .shop-car:hover a{
+.right .shop-car:hover a
+,.show-main-all ul li:hover span{
     color: #ff6700;
 }
-.right .shop-car:hover {
+.right .shop-car:hover
+, .show-main-all ul li:hover {
     background-color: #fff;
 }
 /*  设置购物车详情  */
@@ -184,9 +189,106 @@
 .header .nav{
     float: left;
 }
-.nav li{
+.nav>li{
     float: left;
 }
+/* 设置全部商品列表 */
+.all-goods-wrapper{
+    position: relative;
+}
+.left-menu{
+    height: 420px;
+    width: 234px;
+    padding: 20px 0;
+    background-color: rgba(0 , 0, 0, .6);
+    position: absolute;
+    z-index: 20;
+    left: -120px;
+    line-height: 1;
+}
+ul .left-menu li a{
+    display: block;
+    height: 42px;
+    line-height: 42px;
+    color:  #fff;
+    margin-right: 0;
+    padding: 0 23px 0 29px;
+    font-size: 14px;
+}
+
+ul .left-menu>li:not(:last-of-type) a:hover{
+    background-color: #ff6700;
+}
+.left-menu a i{
+    float: right;
+    line-height: 42px;
+    color: hsla(0,0%,100%,.5);
+    font-size: 20px;
+}
+/* 设置left-menu显示详情 */
+ul .left-menu .show-main {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 234px;
+    width: 992px;
+    height: 460px;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0,0,0,.18);
+    z-index: 500;
+
+}
+/* 设置left-menu划过显示 */
+.nav .left-menu li:hover~.show-main,
+.nav ,.left-menu .show-main:hover{
+    display: block;
+    
+}
+
+/* 设置完整商品样式 */
+.show-main-all ul{
+    width: 248px;
+    height: 456px;
+    margin: 0px;
+    float: left;
+    padding :2px 0;
+}
+/* 设置列項 */
+.show-main-all ul li{
+    position: relative;
+    float: left;
+    width: 248px;
+    height: 76.3px;
+}
+.show-main-all ul li a{
+    padding: 18px 20px;
+    display: block;
+    line-height: 40px;
+    color: #333;
+    transition: color .2s;
+}
+/* 设置图片 */
+.show-main-all ul li div{
+    width: 60px;
+    height: 100%;
+    background-color: #fff;
+    background-image: url(../img/t1.webp);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    float: left;
+    margin-right: 1px;
+}
+.show-main-all ul li span{
+    color: black;
+    font-size: 14px;
+    float: left;
+    width: 147px;
+    line-height: 40px;
+}
+
+
+
 .header{
     position: relative;
 }
@@ -196,7 +298,7 @@
     margin-left: 7px;
     padding-left: 58px;
 }
-.header-cate .nav li a{
+ .nav li a{
     font-size: 16px;
     margin-right: 20px;
 }
@@ -206,6 +308,10 @@
 }
 .nav li:hover a{
     color: #ff6700;
+}
+/* 覆盖设置 */
+.nav li .left-menu a{
+    color: #fff;
 }
 /* 全部商品详情 */
 .nav .goods-info{
@@ -218,6 +324,7 @@
     top: 100px;
     left: 0px;
     box-shadow: none;
+    z-index: 800;
     /* border-top:1px solid rgb(224,224,224);
     box-shadow: 0 5px 2px rgba(0 , 0, 0, .2); */
     transition: height 0.3s, box-shadow 0.2s;
@@ -227,7 +334,6 @@
     border-top:1px solid rgb(224,224,224);
     box-shadow: 0 4px 10px rgba(0 , 0, 0, .2);
     height: 228px;
-    z-index: 24;
 }
 /*  */
 .search-wrapper{
@@ -236,23 +342,32 @@
     border: 1px solid #e0e0e0;
     float: right;
     margin-top: 25px;
+    outline: none;
 }
 /* 搜索栏 */
 .search-wrapper .search-input{
-    
+    box-sizing: border-box;
     float: left;
     height: 50px;
     padding: 0px 10px;
-    border: none;
-    width: 224px;
+    border: 1px solid rgb(224,224,224);
+    width: 244px;
     font-size: 16px;
+    outline: none;
 
 }
+/* 设置input内字体样式 */
+input::-webkit-input-placeholder {
+    color: #d0d0d0;
+    font-size: 14px;
+}
 /* 获取焦点后 */
-.search-wrapper .search-input:focus{
-    outline: 1px solid #ff6700;
+.search-wrapper .search-input:focus,
+.search-wrapper .search-input:focus + button{
+    border-color:  #ff6700;
     
 }
+
 .search-wrapper .search-btn{
     float: left;
     height: 50px;
@@ -262,5 +377,201 @@
     background-color: #fff;
     color: #616161;
     font-size: 14px;
-    border-left: 1px solid #e0e0e0;
+    border: 1px solid rgb(224,224,224);
+    border-left:none;
+}
+.search-wrapper .search-btn:hover{
+    background-color: #ff6700;
+}
+/*  创建弹出列表详情 */
+.goods-info-detail{
+    
+}
+.goods-info-detail li{
+    padding: 0px 12px 0;
+}
+.goods-info-detail li a{
+    float: left;
+    background-image: url(../img/t1.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 160px;
+    height: 198px;
+    margin: auto;
+    background-size: contain;
+    position: relative;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+.goods-info-detail li a .main-detail {
+    margin:140px auto 0px;
+    width: 160px;
+    height: 62px;
+    line-height: 62px;
+    font-size: 12px;
+    color: #333;
+    
+}
+.goods-info-detail li a .main-detail span{
+    display: block;
+    width: 164px;
+    height: 18px;
+    margin: 0;
+    text-align: center;
+}
+.goods-info-detail li a .main-detail :nth-child(1){
+    padding-top: 9px;
+}
+.goods-info-detail li a .main-detail :nth-child(2){
+    color: #ff6700;
+}
+/* 设置分隔符 */
+ .goods-info-detail .line:not(:last-of-type)::after{
+    position: absolute;
+    top: 35px;
+    z-index: 1;
+    width: 0.5px;
+    height: 100px;
+    content: "";
+    background-color: #e0e0e0;
+}
+/* 设置banner */
+.banner{
+    position: relative;
+    height: 460px;
+}
+.banner img{
+    width: 100%;
+    vertical-align: top;
+}
+.banner .img-lists li{
+    position: absolute;
+    
+}
+/* 设置pointer */
+.pointer{
+    position: absolute;
+    right: 35px;
+    bottom: 22px;
+}
+.pointer a{
+    float: left;
+    width: 6px;
+    height: 6px;
+    border: 2px solid hsla(0,0%,100%,.3);
+    background-color: rgba(0 , 0, 0, .4);
+    border-radius: 10px;
+    margin-left: 6px;
+    opacity: 1;
+}
+.pointer a:hover
+,.pointer .active {
+    border-color:rgba(0 , 0, 0, .4) ;
+    background-color: #fff;
+}
+.pre-next a{
+    width: 41px;
+    height: 69px;
+    background-image: url(../img/icon-slides.png);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+.pre-next .pre{
+    left: 234px;
+    background-position: -84px 0;
+}
+.pre-next .pre:hover{
+    background-position: 0 0;
+}
+.pre-next .next{
+    right: 0;
+    background-position: -125px 0;
+}
+.pre-next .next:hover{
+    background-position: -43px 0;
+}
+.backtop{
+    width: 84px;
+    height: 561px;
+    position: fixed;
+    bottom: 70px;
+    right: 0;
+    z-index: 9999;
+}
+.backtop a{
+    position: relative;
+    display: block;
+    width: 82px;
+    height: 90px;
+    background-color: #fff;
+    border: 1px solid #f5f5f5;
+    text-align: center;
+}
+.backtop a div{
+    color: #757575;
+    position: relative;
+    text-align: center;
+}
+.backtop a span{
+    display: block;
+    margin-top: 50px;
+    color: #757575;
+    transition: color .3s;
+}
+.backtop a div img{
+    position: absolute;
+    top: 0;
+    left: 26px;
+    width: 30px;
+    height: 30px;
+    padding-top: 16px;
+    /* transition: opacity .3s; */
+}
+.backtop  img:nth-of-type(2){
+    opacity: 0;
+    transition: opacity .3s;
+}
+.backtop a:hover img{
+    position: absolute;
+    top: 0;
+    left: 26px;
+    width: 30px;
+    height: 30px;
+    padding-top: 16px;
+    opacity: 1;
+}
+.backtop a:hover span{
+ color: #ff6700;
+}
+/* 右侧二维码 */
+ .qrcode-1{
+    width: 130px;
+    height: 192px;
+    top: -121px;
+    left: -140px;
+    position: absolute;
+    /* visibility:hidden; */
+    /* border: 1px solid #f5f5f5; */
+    background-color: #fff;
+    box-shadow: 0 0 2px rgba(0 , 0, 0, .2);
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity .3s;
+}
+.backtop a div .g12 {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 6px -10px;
+    border: 0;
+}
+.backtop a div .g13 {
+    padding: 131px 25px;
+    color: black;
+}
+.backtop .sdsd:hover .qrcode-1{
+    opacity: 1;
+    display: block;
 }
