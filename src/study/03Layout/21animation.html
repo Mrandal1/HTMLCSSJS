@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation</title>
+    <style>
+        .box1{
+        	width: 800px;
+        	height: 800px;
+        	background-color:silver;
+        }
+        /* 过渡 transition
+        transition-property 执行属性
+        transition-duration 效果持续时间
+        transition-timing-function 过渡的时序函数
+        1 ease 默认值 慢速开始 先加速 再减速
+        2 linear 匀速
+        3 ease-in 加速
+        4 ease-out 减速
+        5 ease-in-out 先加速再减速
+        6 cubic-bezier() 使用相关参数
+        7 step()
+        transition-delay 延迟
+        */
+        .box1 .box2{
+			width: 100px;
+            height: 100px;
+            background-color: #fba;
+            margin-bottom: 100px;
+            transition: all .2s;
+        }
+       
+        .box1:hover .box2{
+        	width: 200px;
+        	height: 200px;
+        }
+        /* aniamtion动画
+        自动触发
+        设置关键帧 
+        
+        
+        */ 
+        .box3{
+            margin-top: 200px;
+            width: 100px;
+            height: 100px;
+            margin-left: 0;
+            background-color: cadetblue;
+            animation-name:test;
+            animation-duration: 2s;
+            /* 执行次数
+            infinite 无限 */
+            animation-iteration-count: infinite;
+            /* animation-direction改变方向 
+            normal 默认 从from 到to
+            reverse 反方向
+            alternate 反方向,且重复执行反向执行*/
+            animation-direction:reverse ;
+            /*  animation-play-state执行状态
+             running 默认
+             paused 暂停*/
+             /* animation-fill-mode动画填充模式
+             none 默认 执行完毕 回到原处
+             forwards  执行完毕 回到结束处
+             backwards 延时等待时，元素处于开始位置
+             both=forwards + backwards*/
+             animation-fill-mode: both;
+           
+        }
+        .box1:hover .box3{
+             animation-play-state:paused ;
+        }
+        @keyframes test {
+            /* 开始位置 */
+            from{
+                margin-left: 0px;
+            
+           } 
+            /* 结束位置 */
+           to{
+                margin-left:700px ;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+<div class="box1">
+    <div class="box2"></div>
+    <div class="box3"></div>
+</div>
+</body>
+</html>
