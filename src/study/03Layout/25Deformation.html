@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deformation</title>
+<style type="text/css">
+	html{
+		/*设置视距*/
+		perspective:800px; 
+	}
+	.wrapper{
+		margin: 20px auto;
+		width: 500px;
+		height: 500px;
+		border-radius: 50%;
+		position: relative;
+		background-image:url("./exercise/mi/img/clock.jpg");
+		background-position: 0 -5px;
+	}
+	.wrapper>div{
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right:0;
+		margin: auto;
+	}
+	.hour-wrapper{
+		width: 70%;
+		height: 70%;
+		animation:run 216000s linear infinite;
+	}
+	.hour{
+		width: 6px;
+		height:50%;
+		background-color: black;
+		margin: 0 auto;
+		
+	}
+	.min-wrapper{
+		width: 80%;
+		height: 80%;
+		animation:run 3600s linear infinite;
+	}
+	.min{
+		width: 4px;
+		height:50%;
+		background-color: black;
+		margin: 0 auto;
+	}
+	.sec-wrapper{
+		width: 95%;
+		height: 95%;
+		animation:run 60s steps(60) infinite;
+	}
+	.sec{
+		width: 2px;
+		height: 50%;
+		background-color: red;
+		margin: 0 auto;
+		/*animation: run 60s;*/
+	}
+	@keyframes run{
+	from{
+	transform: rotateZ(0);
+	}
+	to{
+	transform: rotateZ(360deg);
+	}
+	}
+	/*transform变形
+	translateX(px)平移效果
+	translateY()平移效果
+	translateZ()平移效果
+	rotateX(deg)旋转
+	rotateY(deg)旋转
+	rotateZ(deg)旋转 turn转一圈*/
+</style>
+</head>
+<body>
+	<div class="wrapper">
+
+	<div class="hour-wrapper">
+		<div class="hour"></div>
+	</div>
+
+
+	<div class="min-wrapper">
+			<div class="min"></div>
+		</div>
+
+	<div class="sec-wrapper">
+		<div class="sec"></div>	
+
+	</div>
+</div>
+</body>
+</html>

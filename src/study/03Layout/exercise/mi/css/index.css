@@ -768,6 +768,11 @@ input::-webkit-input-placeholder {
     position: relative;
     list-style: none;
     float: left;
+    transition: all .3s;
+}
+.home-flashsale .flashSaleList ul li:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 0px 10px rgba(0 , 0, 0, .2);
 }
 .home-flashsale .flashSaleList ul li a{
     display: block;

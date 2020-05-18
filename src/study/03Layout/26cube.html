@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html{
+            perspective: 800px;
+        }
+        .cube{
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            transform-style: preserve-3d;
+            /* transform: rotateX(45deg) rotateZ(45deg); */
+            animation: cube 20s forwards infinite linear;
+        }
+        @keyframes cube {
+            from{
+                transform: rotateX(0deg) rotateZ(0deg);
+            }
+            to{
+                transform:rotateX(360deg) rotateZ(360deg);
+            }
+        }
+        .cube>div{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+        }
+        img{
+            vertical-align: top;
+            width: 200px;
+            height: 200px;
+        }
+        /* 右 */
+        .box1{
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        /* 左 */
+         .box2{
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        /* 上 */
+        .box3{
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        /* 下 */
+         .box4{
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+        /* 后 */
+        .box5{
+            transform:rotateX(180deg)  translateZ(100px);
+        }
+        /* 前 */
+        .box6{
+            transform: rotateX(0deg) translateZ(100px);
+        }
+
+    </style>
+</head>
+<body>
+<div class="cube">
+    <div class="box1">
+        <img src="./exercise/mi/img/mao1.jpg">
+    </div>
+    <div class="box2">
+        <img src="./exercise/mi/img/mao2.jpg">
+    </div>
+    <div class="box3">
+        <img src="./exercise/mi/img/mao3.jpg">
+    </div>
+    <div class="box4">
+        <img src="./exercise/mi/img/mao4.jpg">
+    </div>
+    <div class="box5">
+        <img src="./exercise/mi/img/mao5.jpg">
+    </div>
+    <div class="box6">
+        <img src="./exercise/mi/img/mao6.jpg">
+    </div>
+</div>
+</body>
+</html>

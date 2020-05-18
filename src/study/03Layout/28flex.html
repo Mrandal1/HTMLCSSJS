@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* flex弹性盒子 一般代替浮动来布局
+        弹性容器 flex inline-flex
+			1 flex-direction 指定元素内排列方式
+				row 默认 水平排列 左至右
+				row-reverse  水平排列 右至左
+				column 按列排 自上向下
+				column-reverse  按列排 自下向上
+
+			主轴：弹性元素的排列方向
+			侧轴：与主轴垂直方向的排列方向
+
+			2 flex-wrap 设置元素溢出是否自动换行
+				nowrap 默认 不换行
+				wrap 沿辅轴换行
+				wrap-reverse 沿辅轴反方向换行
+				（flex-flow flex-direction与flex-wrap 的缩写方式）
+
+			3 jusify-content 分配主轴上的空白空间
+				flex-start 沿着主轴起边排列
+				flex-end 沿着主轴终边排列
+				flex-center 居中
+				space-around 空白分布到每个元素的两侧
+				space-between 空白分布到元素的中间
+				space-evenly 空白分布到每个元素单侧
+
+			4 align-items 元素在辅轴上的排列 
+				stretch 默认 将长度设置为相同的值
+				flex-start 沿着辅轴起边排列
+				flex-end 沿着辅轴终边排列
+				flex-center 居中
+			5 align-content
+				--
+
+
+        弹性元素  （弹性容器的直接子元素）
+			1 flex-grow 指定元素的伸展的系数 
+				对于容器的剩下空间按比例分配
+			2 flex-shrink 指定元素的收缩的系数 
+				对于超出的部分按比例收缩
+			3 flex-basic 元素基础长度 
+				默认值 auto
+			4 order 指定排列顺序	
+
+        	 */
+        *{
+        	margin: 0px;
+        	padding: 0;
+        	list-style: none;
+        }
+        ul{
+        	width: 800px;
+        	border: 10px solid red;
+        	/*设置弹性容器*/
+        	display: flex;
+        	justify-content:space-around;
+        }
+        li{
+        	width: 100px;
+        	height: 100px;
+        	background-color: #fba;
+        	/*float: left;*/
+        	/*margin-left: 5px;*/
+        	flex-grow: 0;
+        }
+    </style>
+</head>
+<body>
+<ul>
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+	<li>5</li>
+	<li>6</li>
+</ul>
+</body>
+</html>

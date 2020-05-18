@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* less 兼容一般 */
+        /* 1 使用变量 */
+        html{
+             --color:#bfa;
+        }
+       
+        .box1{
+            /* 2 使用计算函数 */
+            width: calc(1000px/2);
+            height: 200px;
+            background-color: var(--color);
+        }
+        .box1{
+            width: 100px;
+            height: 200px;
+            color:  var(--color);
+        }
+        .box1{
+            width: 100px;
+            height: 200px;
+            border: 10px solid var(--color);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">aaa</div>
+    <div class="box2">aaa</div>
+    <div class="box3">aaa</div>
+</body>
+</html>
