@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*创建一个对象数据*/
+        var obj = {
+            name: "obj",
+            age: 12,
+            obj2: {
+                name: "obj2"
+            }
+
+
+        };
+
+        //声明函数
+
+        function fun(a, b) {
+            console.log(a + b);
+        }
+
+        var funq = function (a, b) {
+            console.log(a + b);
+        }
+        /*JS中不会检查函数实参的类型与数量*/
+        fun(1, 2, 3, 4);
+        fun("A", 2, 3, 4, "a");
+        console.log(obj.name + "\t" + obj.obj2.name);
+
+        /*JS中的返回类型不用指定*/
+        function fun1(a, b) {
+            return a + b;
+        }
+
+        /*匿名函数与匿名对象*/
+        /*立即执行函数*/
+        (function () {
+            alert();
+        })();
+        //有参形式
+        (function (a, b) {
+            console.log(a + b)
+        })(4, 6);
+
+
+        /*枚举输出对象中的所有属性*/
+        for (var temp in obj) {
+            console.log(temp + obj[temp]);
+
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
