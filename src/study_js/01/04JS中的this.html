@@ -13,7 +13,7 @@
         b = 2;
 
 
-        console.log(window.fun());//111
+        console.log(fun());
 
         /*函数的声明提前*/
         fun();//fun()函数  fun()函数已经加载完毕
@@ -28,14 +28,15 @@
         };
 
 
-        /*函数作用域*/
+        /*函数作用域 内也有声明提前*/
         function fun3() {
             var c = 30;
-                /*可以访问全局范围的值*/
+            /*可以访问全局范围的值*/
             console.log(a);
         }
+
         /* c 的层级属于 fun3 更高级的范围无法访问*/
-       /* console.log(c);//c is not defined*/
+        /* console.log(c);//c is not defined*/
 
 
     </script>

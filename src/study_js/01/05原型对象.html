@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /**
+         * 工厂方法获取对象  一般函数与对象函数没有结构上的不同
+         * @param name
+         * @param age
+         * @returns {Object}
+         */
+        function GetObj(name, age) {
+
+            this.name = name;
+            this.age = age;
+            //公共的函数可以在全局域中使用proto定义，减少创建次数
+            this.sayName = function () {
+                return this.name + this.age;
+            };
+            // this.fun = singlefun;
+
+        }
+
+        //公共函数
+        // function singlefun() {
+        //     return this.name + this.age;
+        // }
+
+        GetObj.prototype.fun = function () {
+            return this.name + this.age;
+        };
+
+        //实例对象
+        var temp = new GetObj();
+        console.log(new GetObj("Q", 12).sayName());
+        console.log(new GetObj("123", 15).sayName());
+        console.log(new GetObj("single", 15).fun());
+
+
+        //原型对象 对于其所有的实例来说是一块公共的区域  原型对象也是对象
+        GetObj.prototype;
+        //实例访问原型函数
+        console.log(temp.__proto__);
+        console.log(new GetObj().__proto__ == GetObj.prototype);
+
+        //向原型对象追加属性
+        GetObj.prototype.a = 10;
+        var a1 = new GetObj();
+        var a2 = new GetObj();
+        //本对象
+        a2.a = 20;
+        //通过 __proto__ 想起原型函数增加
+        a2.__proto__.b = 12121212;
+
+        console.log(a1.a);//10 本对象中没有a属性到原型函数中查找 最后到Object的原型函数中寻找
+        console.log(a2.a);//20  在本对象中有，直接引用
+
+        //    使用 in 检查对象与原型函数中是否有指定属性 只要上层任意原型函数中有就会返回true
+        console.log("a" in a1);
+
+        //可以使用 hasOwnProperty 检查本对象中的属性 不检查原型函数
+        console.log(a1.hasOwnProperty("a"));
+
+        //    Object的原型没有原型
+        console.log(a1.__proto__.__proto__.__proto__);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

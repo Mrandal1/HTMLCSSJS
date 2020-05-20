@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function Get(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        var getTest = new Get("张三", 12);
+        //重写 toString()
+        Get.prototype.toString = function () {
+            return this.name + this.age;
+        };
+        // console.log(getTest);
+        console.log(getTest.toString());
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
