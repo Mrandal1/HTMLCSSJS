@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // JS中有三种包装类 String() Number() Boolean()
+
+
+        const str1 = "a b c";
+
+        console.log(str1.toUpperCase());
+        console.log(str1);
+
+        //获取字符串长度
+        console.log("长度为" + str1.length);
+        //返回指定脚标的字符
+        console.log("第2位字符为：\t" + str1.charAt(2));
+        //返回指定脚标的字符unicode
+        console.log("第2位uni为：\t" + str1.charCodeAt(2));
+
+        //获取指定unicode的字符
+        console.log("unicode 1200 表示" + String.fromCharCode(1200));
+
+        //查找指定字符 返回所在位置 没有返回-1 可以同时指定开始查找位置
+        console.log("hello world".indexOf("o",5));
+
+        //从后查找
+        console.log("hello world".lastIndexOf("o",7));
+
+        //截取指定内容
+        console.log("hello world".slice(0,5));
+
+        //分割字符串
+        console.log("192.168.10.1".split("\."));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

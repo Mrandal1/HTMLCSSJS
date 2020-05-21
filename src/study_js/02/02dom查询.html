@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //加载完毕执行
+        window.onload = function () {
+            //获取 bt1
+            let bt1 = document.getElementById("bt1");
+            bt1.onclick = function () {
+                //获取元素
+                let sh = document.getElementById("sh");
+                //获取元素内部 html 内容
+                alert(sh.innerHTML);
+
+
+            };
+
+            //获取 bt2
+            let bt2 = document.getElementById("bt2");
+            bt2.onclick = function () {
+                //查找所有 li 节点
+                let lis = document.getElementsByTagName("li");
+                alert("捕获到" + lis.length + "个li项");
+
+                for (let i = 0; i <= lis.length; i++) {
+                    alert(lis[i].innerHTML);
+                }
+            }
+
+
+            //获取 bt3
+            let bt3 = document.getElementById("bt3");
+            bt3.onclick = function () {
+                //查找name=sex的节点
+                let sexs=document.getElementsByName("sex");
+                //获取节点对象属性  获取 class 要使用 className
+                alert(sexs[0].value+"  "+sexs[1].value);
+            }
+
+        }
+    </script>
+</head>
+<body>
+<ul id="list1" style=";width: 100px;height: 100px;list-style: none">
+    <li id="sh">上海</li>
+    <li>北京</li>
+    <li>东京</li>
+    <li>广州</li>
+    <li>北京</li>
+</ul>
+<form>
+    <input type="radio" name="sex" value="male" checked>Male
+    <br>
+    <input type="radio" name="sex" value="female">Female
+</form>
+<button id="bt1" style="width: 80px;height: 20px;display: block;margin-bottom: 10px;">获取bt1</button>
+<button id="bt2" style="width: 80px;height: 20px;display: block;margin-bottom: 10px;">获取bt2</button>
+<button id="bt3" style="width: 80px;height: 20px;display: block;margin-bottom: 10px;">获取bt3</button>
+<button id="bt4" style="width: 80px;height: 20px;display: block;margin-bottom: 10px;">获取bt4</button>
+<button id="bt5" style="width: 80px;height: 20px;display: block;margin-bottom: 10px;">获取bt5</button>
+<button id="bt6" style="width: 80px;height: 20px;display: block;margin-bottom: 10px;">获取bt6</button>
+<button id="bt7" style="width: 80px;height: 20px;display: block;margin-bottom: 10px;">获取bt7</button>
+<button id="bt8" style="width: 80px;height: 20px;display: block;margin-bottom: 10px;">获取bt8</button>
+</body>
+</html>

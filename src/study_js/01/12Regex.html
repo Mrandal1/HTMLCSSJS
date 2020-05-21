@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //定义正则  第二个参数 i 忽略大小写 g 全局匹配模式 m 多行匹配
+        const re = new RegExp("\\.+", "ig");
+
+        //定义正则
+        const reg = /\.+/i;
+
+        //验证数据
+        console.log(re.test("."));
+
+        //search() 方法用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串。
+        console.log("返回的位置" + "1221.11.11.11".search(reg));//5
+
+        //match() 方法可在字符串内检索指定的值  存放匹配结果的数组
+        console.log("1221.11.11.11".match(/\d+/ig));
+
+        //replace 替换
+        console.log("1,2,3,4,5,6".replace(/,/ig, "."));
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

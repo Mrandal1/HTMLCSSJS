@@ -42,7 +42,7 @@
         GetObj.prototype;
         //实例访问原型函数
         console.log(temp.__proto__);
-        console.log(new GetObj().__proto__ == GetObj.prototype);
+        console.log(new GetObj().__proto__ === GetObj.prototype);
 
         //向原型对象追加属性
         GetObj.prototype.a = 10;

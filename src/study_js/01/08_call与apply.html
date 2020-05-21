@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        /*call()与apply()表示函数的调用 ,可以指定对象参数*/
+        function f(a, b) {
+            console.log("调用了" + this + "a" + a + "b" + b);
+            //函数的实参会封装进 arguments 中
+            console.log("参数数目为" + arguments.length);
+        }
+
+        var obj = {};
+        f();
+
+        //call与apply 可以同时指定形参
+        f.call(obj, 1, 2);
+        //apply需要封装形参
+        f.apply(obj, [3, 4, 5]);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #outer {
+            width: 300px;
+            height: 350px;
+            margin: 30px auto;
+            background-color: rgba(255, 255, 0, .1);
+            border-radius: 5%;
+            border: 1px solid #fba;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .inner {
+            width: 50%;
+            margin: 10px auto;
+        }
+
+        #info {
+            width: 50%;
+            margin: 0 auto;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let pre = document.getElementById("pre");
+            let next = document.getElementById("next");
+            const imgs = ["../../study/03Layout/exercise/mi/img/mao1.jpg",
+                "../../study/03Layout/exercise/mi/img/mao2.jpg",
+                "../../study/03Layout/exercise/mi/img/mao3.jpg",
+                "../../study/03Layout/exercise/mi/img/mao4.jpg",
+                "../../study/03Layout/exercise/mi/img/mao5.jpg"];
+            //当前图片
+            let count = 0;
+            pre.onclick = function () {
+                count--;
+                if (count < 0 || count > imgs.length - 1) {
+                    count = imgs.length - 1;
+                }
+                document.getElementById("img-lists").src = imgs[count];
+                document.getElementById("info").innerHTML = "共 5 张 ,当前第 " + (count + 1) + " 张";
+
+            };
+            next.onclick = function () {
+                count++;
+                if (count < 0 || count > imgs.length - 1) {
+                    count = 0;
+                }
+                document.getElementById("img-lists").src = imgs[count];
+                document.getElementById("info").innerHTML = "共 5 张 ,当前第 " + (count + 1) + " 张";
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+<div id="outer">
+    <p id="info">共 5 张 ,当前第 1 张</p>
+    <img id="img-lists" src="../../study/03Layout/exercise/mi/img/mao3.jpg" alt="猫">
+
+    <div class="inner">
+        <button id="pre">前一张</button>
+        <button id="next">下一张</button>
+    </div>
+
+</div>
+</body>
+</html>
