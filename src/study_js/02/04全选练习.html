@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        form {
+            width: 500px;
+            height: 500px;
+            margin: 200px auto;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            function get(id, fun) {
+                let btn = document.getElementById(id);
+                btn.onclick = fun;
+            }
+            function re(id){
+                return  document.getElementsByName(id);
+            }
+
+            //设置全选
+            get("all", function () {
+                //获取 item
+                let items =re("item");
+                for (let i = 0; i < items.length; i++) {
+                    items[i].checked = true;
+                }
+            });
+            //设置全不选
+            get("not-all", function () {
+                //获取 item
+                let items =re("item");
+                for (let i = 0; i < items.length; i++) {
+                    items[i].checked = false;
+                }
+            });
+            //设置反选
+            get("re-all", function () {
+                //获取 item
+                let items =re("item");
+                for (let i = 0; i < items.length; i++) {
+                    items[i].checked = !items[i].checked;
+                }
+            });
+            //提交
+            get("go", function () {
+                //获取 item
+                let items =re("item");
+                let arr = [];
+                for (let i = 0; i < items.length; i++) {
+                    if (items[i].checked) {
+                        arr.push(items[i].value);
+                    }
+                }
+                alert("你爱好的运动是:\n" + arr + "");
+
+            });
+            //设置 input 全选
+            let ch = document.getElementById("checked-all");
+            ch.onclick = function () {
+                //获取 item
+                let items =re("item");
+                /*    if (ch.checked) {
+                        for (let i = 0; i < items.length; i++) {
+                            items[i].checked = true;
+                        }
+                    } else {
+                        for (let i = 0; i < items.length; i++) {
+                            items[i].checked = false;
+                        }
+                    }*/
+                for (let i = 0; i < items.length; i++) {
+                    items[i].checked = this.checked;
+
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+<form method="post" action="">
+    <span>你爱好的运动是？</span><br>
+    <input id="checked-all" name="item" type="checkbox" value="">全选/全不选<br>
+    <input name="item" type="checkbox" value="篮球">篮球
+    <input name="item" type="checkbox" value="足球">足球
+    <input name="item" type="checkbox" value="羽毛球">羽毛球<br>
+
+    <input type="button" id="all" value="全选">
+    <input type="button" id="not-all" value="全不选">
+    <input type="button" id="re-all" value="反选">
+    <input id="go" type="submit">
+</form>
+</body>
+</html>

@@ -4,6 +4,30 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script>
+        //直接获取 body
+        const body=document.body;
+        //直接获取 html
+        const html=document.documentElement;
+        //获取页面所有元素
+        //const  all=document.all;
+        const all=document.getElementsByTagName("*");
+
+        //查询选择器 根据一个 css 选择器 查询  只会返回符合结果的第一个元素
+        document.querySelector("#lists li");
+        //查询选择器 根据一个 css 选择器 查询  返回所有结果
+        document.querySelectorAll("#lists li");
+
+
+
+
+
+
+
+
+
+
+
+
         //加载完毕执行
         window.onload = function () {
             //获取 bt1
@@ -27,18 +51,82 @@
                 for (let i = 0; i <= lis.length; i++) {
                     alert(lis[i].innerHTML);
                 }
-            }
+            };
 
 
             //获取 bt3
             let bt3 = document.getElementById("bt3");
             bt3.onclick = function () {
                 //查找name=sex的节点
-                let sexs=document.getElementsByName("sex");
+                let sexs = document.getElementsByName("sex");
                 //获取节点对象属性  获取 class 要使用 className
-                alert(sexs[0].value+"  "+sexs[1].value);
+                alert(sexs[0].value + "  " + sexs[1].value);
+            };
+
+            let bt4 = document.getElementById("bt4");
+            bt4.onclick = function () {
+                //获取 lists 下所有 li 节点
+                //1 获取 lists
+                let lists = document.getElementById("list1");
+                //2 获取所有 li 子节点
+                let lis = lists.getElementsByTagName("li");
+                for (let i = 0; i < lis.length; i++) {
+                    alert(lis[i].innerHTML);
+                }
+
+            };
+
+            let bt5 = document.getElementById("bt5");
+            bt5.onclick = function () {
+                let lists = document.getElementById("list1");
+                // childNodes 会获取所有节点  包括标签间空白
+                // let child = lists.childNodes;
+                // alert(child.length);
+
+                // children 获取所有子元素
+                let child = lists.children;
+                for (let i = 0; i < child.length; i++) {
+                    alert(child[i].innerHTML);
+                }
+            };
+
+            //封装取得按钮
+            function getButton(id, fun, fun1) {
+                let btn = document.getElementById(id);
+                btn.onclick = fun;
+                btn.onmouseover = fun1;
             }
 
+            //获取bt6
+            getButton("bt6", function () {
+                //获取id=sh的父节点
+                let sh = document.getElementById("sh");
+                let pa = sh.parentNode;
+                alert(pa.id + "\n" + pa.innerText);
+            });
+
+            //获取bt7
+            getButton("bt7", function () {
+                //获取 id=gz 的前一个兄弟节点  previousSibling会获取空白
+                let gz = document.getElementById("gz");
+                let bro = gz.previousElementSibling;
+                alert(bro.innerText);
+                //获取 id=gz 的下一个兄弟节点
+                let next = gz.nextElementSibling;
+                alert(next.innerText);
+            });
+            // 获取 id=123的value属性
+            getButton("bt8", function () {
+                let in123 = document.getElementById("123");
+                alert(in123.value);
+
+            }, function () {
+                let in123 = document.getElementById("123");
+                in123.value = Math.round(Math.random() * 12);
+            });
+            getButton("bt9", function () {
+
+            });
         }
     </script>
 </head>
@@ -47,13 +135,14 @@
     <li id="sh">上海</li>
     <li>北京</li>
     <li>东京</li>
-    <li>广州</li>
-    <li>北京</li>
+    <li id="gz">广州</li>
+    <li id="bj">北京</li>
 </ul>
 <form>
     <input type="radio" name="sex" value="male" checked>Male
     <br>
     <input type="radio" name="sex" value="female">Female
+    <input id="123" type="search" value="test">
 </form>
 <button id="bt1" style="width: 80px;height: 20px;display: block;margin-bottom: 10px;">获取bt1</button>
 <button id="bt2" style="width: 80px;height: 20px;display: block;margin-bottom: 10px;">获取bt2</button>
@@ -63,5 +152,6 @@
 <button id="bt6" style="width: 80px;height: 20px;display: block;margin-bottom: 10px;">获取bt6</button>
 <button id="bt7" style="width: 80px;height: 20px;display: block;margin-bottom: 10px;">获取bt7</button>
 <button id="bt8" style="width: 80px;height: 20px;display: block;margin-bottom: 10px;">获取bt8</button>
+<button id="bt9" style="width: 80px;height: 20px;display: block;margin-bottom: 10px;">获取bt9</button>
 </body>
 </html>

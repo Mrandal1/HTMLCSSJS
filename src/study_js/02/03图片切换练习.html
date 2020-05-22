@@ -40,7 +40,7 @@
             let count = 0;
             pre.onclick = function () {
                 count--;
-                if (count < 0 || count > imgs.length - 1) {
+                if (count < 0) {
                     count = imgs.length - 1;
                 }
                 document.getElementById("img-lists").src = imgs[count];
@@ -49,7 +49,7 @@
             };
             next.onclick = function () {
                 count++;
-                if (count < 0 || count > imgs.length - 1) {
+                if (count > imgs.length - 1) {
                     count = 0;
                 }
                 document.getElementById("img-lists").src = imgs[count];
