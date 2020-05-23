@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #total{
+            width: 500px;
+            height: 500px;
+            margin: 20px auto;
+        }
+        .inner{
+            float: left;
+            border: 1px solid red;
+        }
+        .btnList{
+            float: left;
+            padding-left: 40px;
+        }
+        .btnList div{
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            function getById(id,fun) {
+                let btn=document.getElementById(id);
+                btn.onclick=fun;
+            }
+            //创建一个广州节点，添加到#city下
+            getById("btn01",function () {
+                //1 创建元素节点
+                let gz_li=document.createElement("li");
+                //gz_li.innerText="广州";
+                //2 创建文本节点
+                let gz_text=document.createTextNode("广州");
+                //3 将子节点添加到父节点
+                gz_li.appendChild(gz_text);
+                //4 将 li 添加至#city下
+                document.getElementById("city").appendChild(gz_li);
+            });
+
+            //将广州节点添加到#bj前
+            getById("btn02",function () {
+                let gz_li=document.createElement("li");
+                let gz_text=document.createTextNode("广州");
+                gz_li.appendChild(gz_text);
+                //获取北京
+                let bj=document.getElementById("bj");
+                //父对象引用， 在其对应子节点前插入子节点
+                document.getElementById("city").insertBefore(gz_li,bj);
+            });
+
+            //使用广州节点替换#bj节点
+            getById("btn03",function () {
+                let gz_li=document.createElement("li");
+                let gz_text=document.createTextNode("广州");
+                gz_li.appendChild(gz_text);
+                let bj=document.getElementById("bj");
+                //替换子节点
+                document.getElementById("city").replaceChild(gz_li,bj);
+            });
+
+            //删除#bj节点
+            getById("btn04",function () {
+                let bj=document.getElementById("bj");
+                //替换子节点
+                /*document.getElementById("city").removeChild(bj);*/
+                bj.parentNode.removeChild(bj);
+            });
+
+            getById("btn05",function () {
+                alert(document.getElementById("city").innerHTML);
+            });
+
+            //设置#bj内的HTML代码
+            getById("btn06",function () {
+                document.getElementById("bj").innerHTML="123";
+            })
+        }
+    </script>
+</head>
+<body>
+<div id="total">
+    <div class="inner">
+        <p style="margin: 0">你喜欢哪个城市？ </p>
+
+
+        <ul id="city" style="list-style: none">
+            <li id="bj">北京</li>
+            <li>上海</li>
+            <li>东京</li>
+            <li>杭州</li>
+        </ul>
+    </div>
+    <div class="btnList">
+        <div>
+            <button id="btn01">创建一个广州节点，添加到#city下</button>
+        </div>
+        <div>
+            <button id="btn02">将广州节点添加到#bj前</button>
+        </div>
+        <div>
+            <button id="btn03">使用广州节点替换#bj节点</button>
+        </div>
+        <div>
+            <button id="btn04">删除#bj节点</button>
+        </div>
+        <div>
+            <button id="btn05">读取#city内的HTML代码</button>
+        </div>
+        <div>
+            <button id="btn06">设置#bj内的HTML代码</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

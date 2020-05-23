@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #employeeTable, table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        /*表格固定布局*/
+        #employeeTable {
+            width: 410px;
+            table-layout: fixed;
+            word-break: break-all;
+            word-wrap: break-word;
+
+        }
+
+        tr td {
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+        }
+
+        th, td {
+            width: 150px;
+        }
+
+        input[type=text] {
+            border: none;
+            outline: none;
+        }
+
+        #employeeTable {
+            margin: 100px auto 0;
+        }
+
+        .form_div {
+
+            width: 250px;
+            margin: auto;
+        }
+
+        .form_div h4 {
+            width: 100px;
+            margin: auto;
+        }
+
+       /* #employeeTable :not(#first) tr td:not(:last-child) {
+            color: green;
+        }*/
+    </style>
+    <script>
+        //删除
+        function del() {
+            let btn_lists = document.getElementsByTagName("a");
+            for (let i = 0; i < btn_lists.length; i++) {
+                btn_lists[i].onclick = function () {
+                    if (window.confirm("确认删除" + this.parentNode.parentNode.children[0].innerText + "？")) {
+                        this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
+                    }
+                };
+            }
+        }
+
+        //表格title设置
+        function setTitle() {
+
+            let setTitles = document.querySelectorAll(" #employeeTable :not(#first) tr td:not(:last-child)");
+            for (let i = 0; i < setTitles.length; i++) {
+                setTitles[i].title = setTitles[i].innerText;
+            }
+
+        }
+
+        window.onload = function () {
+            //表格title设置
+            setTitle();
+            //点击删除
+            del();
+
+            //增加数据
+            document.getElementById("addEmp").onclick = function () {
+                let tr = document.createElement("tr");
+                /*  let name = document.createElement("td");
+                  name.innerText = document.getElementById("empName").value;
+                  let Email = document.createElement("td");
+                  Email.innerText = document.getElementById("empEmail").value;
+                  let Salary = document.createElement("td");
+                  Salary.innerText = document.getElementById("empSalary").value;
+                  let re = document.createElement("td");
+                  let a = document.createElement("a");
+                  a.onclick = del;
+                  a.href = "javascripts:;";
+                  a.innerText = 'Delete';
+                  re.appendChild(a);
+                  tr.append(name, Email, Salary, re);*/
+                tr.innerHTML = "<td>" + document.getElementById("empName").value + "</td>" +
+                    "<td>" + document.getElementById("empEmail").value + "</td>" +
+                    "<td>" + document.getElementById("empSalary").value + "</td>" +
+                    "<td>" + "<a href=\"javascripts:;\" >" + "Delete" + "</a>" + "</td>";
+                document.getElementById("employeeTable_tbody").appendChild(tr);
+                del();
+                setTitle();
+            }
+
+        }
+    </script>
+</head>
+<body>
+<table id="employeeTable" style="height: 23px; width: 285px; text-align: center">
+    <tbody id="employeeTable_tbody">
+    <tr id="first">
+        <th>Name</th>
+        <th>Email</th>
+        <th>Salary</th>
+        <th>&nbsp;</th>
+    </tr>
+    <tr>
+        <td title="">TOM</td>
+        <td>tom@tom.com</td>
+        <td>1233</td>
+        <td><a href="javascripts:;">Delete</a>
+        </td>
+    </tr>
+    <tr>
+        <td>Mike</td>
+        <td>mike@mike.com</td>
+        <td>13243</td>
+        <td><a href="javascripts:;">Delete</a></td>
+    </tr>
+    <tr>
+        <td>Jerry</td>
+        <td>jerry@jerry.com</td>
+        <td>5777</td>
+        <td><a href="javascripts:;">Delete</a></td>
+    </tr>
+    </tbody>
+
+</table>
+<div class="form_div">
+    <h4>添加新员工</h4>
+    <table>
+        <tr>
+            <td class="wd">name:</td>
+            <td class="inp">
+                <input type="text" name="empName" id="empName">
+            </td>
+        </tr>
+        <tr>
+            <td class="wd">email:</td>
+            <td class="inp">
+                <input type="text" name="empEmail" id="empEmail">
+            </td>
+        </tr>
+        <tr>
+            <td class="wd">salary:</td>
+            <td class="inp">
+                <input type="text" name="empSalary" id="empSalary">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <button id="addEmp" value="add_emp">
+                    提交记录
+                </button>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

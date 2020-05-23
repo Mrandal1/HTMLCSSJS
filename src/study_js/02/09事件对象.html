@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box1 {
+            width: 200px;
+            height: 50px;
+            border: 1px solid black;
+        }
+        #box2{
+            width: 200px;
+            height: 25px;
+            margin-top: 5px;
+            border: 1px solid black;
+        }
+        #x,#y{
+            width: 50px;
+            display: inline-block;
+            margin-left:25px;
+
+        }
+        #box3{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            document.getElementById("box1").onmousemove=function (event) {
+                    document.getElementById("x").innerText="x="+event.screenX;
+                    document.getElementById("y").innerText="y="+event.screenY;
+            };
+            //实现随鼠标移动
+
+            let b3=document.getElementById("box3");
+           document.onmousemove=function (event) {
+               //使用pageX获取相对于当前页面的坐标
+                b3.style.left=(event.pageX-50)+"px";
+                b3.style.top=(event.pageY-50)+"px";
+            }
+        }
+    </script>
+</head>
+<body id="body" style="height: 1000px;">
+<div id="box1"></div>
+<div id="box2">
+        <span id="x">x=</span>
+        <span id="y">y=</span>
+
+</div>
+<div id="box3">
+
+</div>
+</body>
+</html>
