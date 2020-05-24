@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //定时器
+        window.onload = function () {
+            let co = document.getElementById("count");
+
+            let bt = document.getElementById("bt");
+            let bt1 = document.getElementById("bt1");
+            //setInterval 定时调用
+            let num = 1;
+            let timer;
+            bt.onclick=function(){
+                timer= setInterval(function () {
+                    co.innerHTML = num++;
+                }, 100);
+
+            };
+
+            bt1.onclick=function(){
+                clearInterval(timer);
+
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+<h1 id="count">1</h1>
+<button id="bt">点击开始</button>
+<button id="bt1">点击暂停</button>
+</body>
+</html>

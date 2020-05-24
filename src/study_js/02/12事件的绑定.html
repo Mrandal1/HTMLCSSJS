@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /**
+         * bind事件函数，兼容浏览器
+         */
+        function bind(o, event, callback) {
+            if (o.addEventListener) {
+                //一般浏览器
+                o.addEventListener(event, callback, false);
+            } else {
+                //IE8
+                o.attachEvent("on" + event, function () {
+                    //匿名函数中使用回调函数指定对象
+                    callback().call(o);
+                });
+            }
+
+        }
+
+        window.onload = function () {
+            let bt = document.getElementById("bt");
+            //同时绑定多个相同类型事件时，会发生覆盖
+            /* bt.onclick = function () {
+                 alert("1");
+             };
+             bt.onclick = function () {
+                 alert("2");
+             };*/
+
+            //通过 addEventListener 绑定 多个事件
+            // 第三个参数表示是否在捕获阶段触发
+            bt.addEventListener("click", function () {
+                alert("1");
+            }, false);
+            bt.addEventListener("click", function () {
+                alert("2");
+            }, false);
+        }
+    </script>
+</head>
+<body>
+<button id="bt">点击</button>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // BOM浏览器对象模型
+        //navigator--当前浏览器信息
+        //location--浏览器地址栏信息
+        //History--历史记录
+        //screen--显示器相关信息
+        const x = navigator;
+        document.write("CodeName=" + x.appCodeName);
+        document.write("<br />");
+        document.write("MinorVersion=" + x.appMinorVersion);
+        document.write("<br />");
+        document.write("Name=" + x.appName);
+        document.write("<br />");
+        document.write("Version=" + x.appVersion);
+        document.write("<br />");
+        document.write("CookieEnabled=" + x.cookieEnabled);
+        document.write("<br />");
+        document.write("CPUClass=" + x.cpuClass);
+        document.write("<br/>");
+        document.write("OnLine=" + x.onLine);
+        document.write("<br />");
+        document.write("Platform=" + x.platform);
+        document.write("<br />");
+        document.write("UA=" + x.userAgent);
+        document.write("<br />");
+        document.write("BrowserLanguage=" + x.browserLanguage);
+        document.write("<br />");
+        document.write("SystemLanguage=" + x.systemLanguage);
+        document.write("<br />");
+        document.write("UserLanguage=" + x.userLanguage);
+        document.write("<br />");
+        alert(history.length);
+        window.onload=function () {
+            let bt=document.getElementById("bt");
+            bt.onclick=function () {
+                alert(location);
+            }
+        }
+    </script>
+</head>
+<body>
+<a href="17navigator.html">111 </a>
+<button id="bt">点击</button>
+</body>
+</html>

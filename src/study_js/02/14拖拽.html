@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            margin: 0;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            //鼠标按下开始拖拽
+            //鼠标移动开始跟随移动
+            //鼠标松开元素固定
+
+            let box = document.getElementById("box1");
+            box.onmousedown = function (e) {
+                let ol=e.clientX-box.offsetLeft;
+                let ot=e.clientY-box.offsetTop;
+                document.onmousemove = function (e) {
+                    box.style.left = (e.clientX-ol) + "px";
+                    box.style.top = (e.clientY-ot) + "px";
+                }
+
+            };
+            document.onmouseup = function () {
+                document.onmousemove = null;
+                document.onmousedown=null;
+            };
+        }
+    </script>
+</head>
+<body>
+<div id="box1"></div>
+</body>
+</html>

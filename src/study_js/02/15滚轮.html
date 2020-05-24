@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            margin: 0;
+        }
+
+
+    </style>
+    <script>
+    window.onload=function () {
+        let box=document.getElementById("box1");
+        box.onmousewheel=function (e) {
+                if (e.wheelDelta>0){
+                    box.style.height=box.clientHeight-5+"px";
+                }else{
+                    box.style.height=box.clientHeight+5+"px";
+                }
+                //取消浏览器默认行为
+                return false;
+        }
+    }
+    </script>
+</head>
+<body>
+<div id="box1"></div>
+</body>
+</html>

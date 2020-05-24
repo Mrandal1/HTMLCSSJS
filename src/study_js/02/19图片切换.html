@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #outer {
+            width: 300px;
+            height: 350px;
+            margin: 30px auto;
+            background-color: rgba(255, 255, 0, .1);
+            border-radius: 5%;
+            border: 1px solid #fba;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .inner {
+            width: 50%;
+            margin: 10px 0 0 80px;
+
+        }
+
+        #info {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        #start {
+            margin-left: -14px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let pre = document.getElementById("pre");
+            let next = document.getElementById("next");
+            const imgs = ["../../study/03Layout/exercise/mi/img/mao1.jpg",
+                "../../study/03Layout/exercise/mi/img/mao2.jpg",
+                "../../study/03Layout/exercise/mi/img/mao3.jpg",
+                "../../study/03Layout/exercise/mi/img/mao4.jpg",
+                "../../study/03Layout/exercise/mi/img/mao5.jpg"];
+            //当前图片
+            let count = 0;
+            pre.onclick = function () {
+                count--;
+                if (count < 0) {
+                    count = imgs.length - 1;
+                }
+                document.getElementById("img-lists").src = imgs[count];
+                document.getElementById("info").innerHTML = "共 5 张 ,当前第 " + (count + 1) + " 张";
+
+            };
+            next.onclick = function () {
+                count++;
+                if (count > imgs.length - 1) {
+                    count = 0;
+                }
+                document.getElementById("img-lists").src = imgs[count];
+                document.getElementById("info").innerHTML = "共 5 张 ,当前第 " + (count + 1) + " 张";
+            };
+
+
+            let timer;
+
+            // 自动播放
+            let start = document.getElementById("start");
+            start.onclick = function () {
+                //将重复的定时器关闭
+                clearInterval(timer);
+                timer = setInterval(function () {
+                    count++;
+                    if (count > imgs.length - 1) {
+                        count = 0;
+                    }
+                    document.getElementById("img-lists").src = imgs[count];
+                    document.getElementById("info").innerHTML = "共 5 张 ,当前第 " + (count + 1) + " 张";
+                }, 1000);
+            };
+
+            let stop = document.getElementById("stop");
+            stop.onclick = function () {
+                clearInterval(timer);
+            }
+        }
+
+    </script>
+</head>
+<body>
+<div id="outer">
+    <p id="info">共 5 张 ,当前第 1 张</p>
+    <img id="img-lists" src="../../study/03Layout/exercise/mi/img/mao1.jpg" alt="猫">
+
+    <div class="inner">
+        <button id="pre">前一张</button>
+        <button id="next">下一张</button>
+        <button id="start">开始轮播</button>
+        <button id="stop">结束轮播</button>
+    </div>
+
+</div>
+</body>
+</html>

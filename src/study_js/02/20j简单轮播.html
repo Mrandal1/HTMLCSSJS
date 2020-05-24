@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .img-wrapper {
+            height: 350px;
+            width: 300px;
+            background-color: #fba;
+            margin: 30px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .img-wrapper #in {
+            height: 350px;
+            position: absolute;
+            /*width:1500px ;*/
+            /* transition: left .5s;*/
+        }
+
+        #in li {
+            width: 300px;
+            height: 350px;
+            padding: 10px 10px 10px 0;
+            float: left;
+
+        }
+
+        #in img {
+            width: 300px;
+            height: 330px;
+
+        }
+
+        #nav {
+            position: absolute;
+            top: 338px;
+            left: 110px;
+        }
+
+        #nav a {
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, .5);
+            border: 1px solid black;
+            float: left;
+            margin-right: 5px;
+
+        }
+
+        #nav a:hover {
+            background-color: rgba(0, 0, 0, .4);
+        }
+    </style>
+    <script>
+
+        window.onload = function () {
+            //获取长度
+            let lists = document.getElementById("in");
+            let imgs = document.getElementsByTagName("img");
+            lists.style.width = 310 * imgs.length + "px";
+            //设置一张图片的偏移
+            /*lists.style.left=-310+"px";*/
+            //获取nav
+            let nav = document.getElementsByTagName("nav");
+            //默认索引
+            let index = 0;
+            let allA = document.getElementsByTagName("a");
+            allA[index].style.backgroundColor = "rgba(0 , 0, 0, .4)";
+
+
+            for (let i = 0; i < allA.length; i++) {
+                allA[i].num = i;
+                allA[i].onclick = function () {
+                    index = this.num;
+                    lists.style.left = -310 * index + "px";
+                    //修改a样式
+                    setA();
+                }
+            }
+            //开启轮播
+            autoPlay();
+
+            //设置A
+            function setA() {
+                if (index >= imgs.length - 1) {//5
+                    index = 0;
+
+                }
+                for (let i = 0; i < allA.length; i++) {
+                    allA[i].style.backgroundColor = "";
+                }
+                allA[index].style.backgroundColor = "rgba(0 , 0, 0, .4)";
+            }
+
+
+            //轮播函数
+            function autoPlay() {
+                setInterval(function () {
+                    index++;
+                    index %= imgs.length;
+                    lists.style.transition = "left .5s";
+                    lists.style.left = -310 * index + "px";
+                    setA();
+                }, 3000);
+            }
+
+
+        };
+    </script>
+</head>
+<body>
+<!--外部容器-->
+<div class="img-wrapper">
+    <ul id="in" style="list-style: none">
+        <li>
+            <img src="../../study/03Layout/exercise/mi/img/mao1.jpg" alt="">
+        </li>
+        <li>
+            <img src="../../study/03Layout/exercise/mi/img/mao2.jpg" alt="">
+        </li>
+        <li>
+            <img src="../../study/03Layout/exercise/mi/img/mao3.jpg" alt="">
+        </li>
+        <li>
+            <img src="../../study/03Layout/exercise/mi/img/mao4.jpg" alt="">
+        </li>
+        <li>
+            <img src="../../study/03Layout/exercise/mi/img/mao5.jpg" alt="">
+        </li>
+        <li>
+            <img src="../../study/03Layout/exercise/mi/img/mao1.jpg" alt="">
+        </li>
+    </ul>
+    <!--创建导航按钮-->
+    <div id="nav">
+        <a id="q1" href="javascripts:;"></a>
+        <a id="q2" href="javascripts:;"></a>
+        <a id="q3" href="javascripts:;"></a>
+        <a id="q4" href="javascripts:;"></a>
+        <a id="q5" href="javascripts:;"></a>
+    </div>
+</div>
+</body>
+</html>

@@ -36,16 +36,16 @@
                 // alert(box.currentStyle.width);
 
                 //通用获取当前样式 未设置样式，会返回真实值，而不是默认值
-                alert(getComputedStyle(box,null);
+                alert(getComputedStyle(box, null));
 
             };
 
             document.getElementById("test2").onclick = function () {
                 let box = document.getElementById("box1");
                 //返回元素的可见高度与宽度(包括内容区和内边距)。 返回值不带单位 且为只读
-                alert(box.clientHeight +"   "+box.clientWidth);
+                alert(box.clientHeight + "   " + box.clientWidth);
                 //返回元素的高度与宽度(整个大小，包括内容区，内边距与边框)
-                alert(box.offsetHeight+box.offsetWidth);
+                alert(box.offsetHeight + box.offsetWidth);
                 //	返回元素的偏移容器。(获取最近的设置了定位的祖先元素)
                 alert(box.offsetParent.id);
                 //返回元素的水平偏移位置。
@@ -64,7 +64,7 @@
 <body>
 <div class="bb" style="height: 100px;width: 500px;overflow: auto;background-color: blue;">
     <div id="box1">
-</div>
+    </div>
 
 
 </div>

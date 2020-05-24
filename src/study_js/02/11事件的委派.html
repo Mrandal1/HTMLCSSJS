@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件的委派</title>
+    <style>
+
+    </style>
+    <script>
+
+        window.onload = function () {
+            /**
+             * 为每个超链接绑定事件
+             */
+            let allA = document.getElementsByTagName("a");
+            /*   for (let i = 0; i < allA.length; i++) {
+                   allA[i].onclick = function () {
+                       alert("aa");
+                   };
+               }*/
+            //add
+            let bt = document.getElementById("bt");
+            bt.onclick = function () {
+                bt.onclick = function () {
+                    let li = document.createElement("li");
+                    li.innerHTML = "<a href=\"javascripts:;\" class=\"a\">超链接" + "</a>";
+                    document.getElementById("u1").append(li);
+                }
+            };
+
+            //绑定事件给目标元素的祖先元素，实现时间的委派
+            let ul = document.getElementById("u1");
+            ul.onclick = function (e) {
+                //target 表示事件触发的对象
+                if (e.target.className === "a") {
+                    alert("!");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<button id="bt">按钮</button>
+<ul id="u1">
+    <li><a href="javascripts:;" class="a">超链接1</a></li>
+    <li><a href="javascripts:;" class="a">超链接2</a></li>
+    <li><a href="javascripts:;" class="a">超链接3</a></li>
+</ul>
+</body>
+</html>
