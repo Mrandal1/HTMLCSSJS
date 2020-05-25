@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .con {
+            width: 150px;
+
+            margin: 20px auto;
+            text-align: center;
+        }
+            .con span{
+                width: 150px;
+                display: block;
+                cursor: pointer;
+            }
+        .con div {
+            border-radius: 10px;
+            float: left;
+            width: 100%;
+            background-color: rgba(255,255,255,.5);
+            overflow: hidden;
+        }
+
+        a {
+            width: 100%;
+            background-color: gray;
+            margin-bottom: 5px;
+            float: left;
+            height: 20px;
+        }
+
+        .con .col {
+            height: 20px;
+        }
+
+
+    </style>
+    <script>
+        window.onload = function () {
+
+            let menus = document.querySelectorAll(".m1");
+            let open=menus[0].parentNode;
+            for (let i = 0; i < menus.length; i++) {
+                menus[i].onclick = function () {
+                    let pa = this.parentNode;
+                    if ( pa.classList.contains("col")){
+                        pa.classList.remove("col");
+                        open.classList.add("col");
+                        open=pa;
+                    }else {
+                        pa.classList.add("col");
+                       /* open.classList.remove("col");*/
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body style="height: 1500px;">
+<div id="menu" class="con">
+    <div class="box1">
+        <span class="m1" role="button" aria-disabled="false">菜单一</span>
+        <a href="#">1</a>
+        <a href="#">1</a>
+        <a href="#">1</a>
+        <a href="#">1</a>
+    </div>
+    <div class="box2 col">
+        <span class="m1">菜单二</span>
+        <a href="#">1</a>
+        <a href="#">1</a>
+        <a href="#">1</a>
+        <a href="#">1</a>
+    </div>
+    <div class="box3 col">
+        <span class="m1">菜单三</span>
+        <a href="#">1</a>
+        <a href="#">1</a>
+        <a href="#">1</a>
+        <a href="#">1</a>
+    </div>
+    <div class="box4 col">
+        <span class="m1">菜单四</span>
+        <a href="#">1</a>
+        <a href="#">1</a>
+        <a href="#">1</a>
+        <a href="#">1</a>
+    </div>
+</div>
+</body>
+</html>
