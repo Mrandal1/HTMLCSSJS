@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jQuery/jquery-3.4.1/jquery-3.4.1.js"></script>
+    <style>
+        form {
+            width: 500px;
+            height: 500px;
+            margin: 200px auto;
+        }
+    </style>
+    <script>
+        $(function () {
+            //设置全选
+            $("#all").click(function () {
+                $(":checkbox").prop("checked", true);
+            });
+            //设置全不选
+            $("#not-all").click(function () {
+                $(":checkbox").prop("checked", false);
+            });
+            //设置反选
+            $("#re-all").click(function () {
+                //获取所有选项
+                let $checkbox = $(":checkbox[name='item']");
+                $checkbox.each(function () {
+                    //this 是当前dom元素 不是jquery对象
+                    this.checked = !this.checked;
+                });
+                //判断是否全选
+                let $checked = $(":checkbox[name='item']:checked").length;
+                /*  if ($checked=== $checkbox.length){
+                      $(":checkbox[name='items']").prop("checked",true);
+                  }else {
+                      $(":checkbox[name='items']").prop("checked",false);
+                  }*/
+                $(":checkbox[name='items']").prop("checked", $checked === $checkbox.length);
+
+            });
+
+            //提交
+            $("#go").click(function () {
+                let $checkbox = $(":checkbox[name='item']:checked");
+                let arr = [];
+                $checkbox.each(function () {
+                    arr.push(this.value);
+                });
+                alert("当前选中" + arr);
+            });
+
+
+            //全选按钮
+            let $checked_all = $("#checked-all");
+            $checked_all.click(function () {
+                let $checkbox = $(":checkbox[name='item']");
+                $checkbox.prop("checked", $checked_all.prop("checked"));
+            });
+
+
+            $(":checkbox[name='item']").click(function () {
+                let $checkbox = $(":checkbox[name='item']");
+                let $checked = $(":checkbox[name='item']:checked").length;
+                $(":checkbox[name='items']").prop("checked", $checked === $checkbox.length);
+            })
+        });
+
+    </script>
+</head>
+<body>
+
+<form method="post" action="">
+    <span>你爱好的运动是？</span><br>
+    <input id="checked-all" name="items" type="checkbox" value="">全选/全不选<br>
+    <input name="item" type="checkbox" value="篮球">篮球
+    <input name="item" type="checkbox" value="足球">足球
+    <input name="item" type="checkbox" value="羽毛球">羽毛球<br>
+
+    <input type="button" id="all" value="全选">
+    <input type="button" id="not-all" value="全不选">
+    <input type="button" id="re-all" value="反选">
+    <input id="go" type="submit">
+</form>
+</body>
+</html>

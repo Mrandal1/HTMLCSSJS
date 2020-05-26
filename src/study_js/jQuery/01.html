@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--引入本地未压缩库-->
+    <script src="jQuery/jquery-3.4.1/jquery-3.4.1.js"></script>
+    <script>
+        /* window.onload=function () {
+             //原生
+             let button = document.getElementById("bt");
+             button.onclick=function () {
+
+             }
+         }*/
+
+        $(function () {  // 防止文档在完全加载（就绪）之前运行 jQuery 代码等同 window.onload
+            //  $ 是 jquery的核心函数
+            /*
+            *   1 $(函数)   等同 window.onload
+            *   2 $(HTML字符串) 创建对应html对象
+            *   3 $(选择器字符串)
+            *   4 $(dom对象) 将其转化为jQuery对象
+            *
+            *   jquery对象就是封装了dom对象的数组，加上一系列的功能函数
+            *   jquery与dom对象的属性与方法一般是不互通的
+            * */
+            let $bt = $("#bt");//按id查询
+            let $button = $("button");//按标签名查询
+            $bt.click(function () {
+
+                $("<button>生成的按钮</button>").appendTo("body");
+            });
+
+            document.write($($bt));//jQuery对象
+            /*jquery对象转为dom对象,从数组中取出即可*/
+            document.write($button[1]);
+        })
+    </script>
+</head>
+<body>
+<button id="bt">点击1</button>
+<button id="bt1">点击2</button>
+</body>
+</html>

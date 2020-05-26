@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jQuery/jquery-3.4.1/jquery-3.4.1.js"></script>
+    <script>
+        $(function () {
+            // html()方法 与innerhtml一样
+            //text()方法 与innertext一样
+            //val()设置value
+            //attr()设置和获取属性值  不要用于checked
+            //prop()设置和获取属性值 返回 true 和 false
+            //appendTo() 插入指定元素的子元素末尾
+            //preparedTo() 插入指定元素的子元素开头
+            //insertAfter()  插入指定元素元素末尾
+            //insertBefore() 插入指定元素开头
+            //replaceWith() 用指定元素替换
+            //replaceAll() 用指定的 HTML 内容或元素替换被选元素。
+            //remove() 删除指定标签
+            //empty() 删除指定标签下所有内容
+            $("button").click(function () {
+                $("#q1").html("<h1>1212</h1>");
+                /* $("#q1").text("123123");*/
+                $("select").val(["2"]);
+                $(":selected:first").attr("value", "修改了");
+                alert($(":selected:first").attr("value"));
+            })
+        })
+    </script>
+</head>
+<body>
+<button>点击</button>
+<div id="q1"><span></span></div>
+<select>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option>3</option>
+</select>
+</body>
+</html>

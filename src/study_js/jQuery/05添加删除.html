@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jQuery/jquery-3.4.1/jquery-3.4.1.js"></script>
+    <style>
+        .contain {
+            width: 240px;
+            margin: 20px auto;
+        }
+
+        .left, .right {
+            float: left;
+            height: 200px;
+            width: 120px;
+            margin: auto;
+        }
+
+        select {
+            height: 200px;
+            width: 120px;
+            text-align: center;
+        }
+
+        button {
+            display: inline-block;
+            width: 120px;
+        }
+    </style>
+    <script>
+        $(function () {
+            //选中添加到右边
+            $("button:eq(0)").click(function () {
+                    $("select:eq(0) option:selected").appendTo( $("select:eq(1)"));
+            });
+
+            //全部添加到右边
+            $("button:eq(1)").click(function () {
+                $("select:eq(0) option").appendTo( $("select:eq(1)"));
+            });
+
+            //选中添加到左边
+            $("button:eq(2)").click(function () {
+                $("select:eq(1) option:selected").appendTo( $("select:eq(0)"));
+            });
+
+            //全部添加到左边
+            $("button:eq(3)").click(function () {
+                $("select:eq(1) option").appendTo( $("select:eq(0)"));
+            });
+        })
+    </script>
+</head>
+<body>
+<div class="contain">
+    <div class="left">
+        <select multiple="multiple" name="sel01">
+            <option value="opt01">选项1</option>
+            <option value="opt02">选项2</option>
+            <option value="opt03">选项3</option>
+            <option value="opt04">选项4</option>
+            <option value="opt05">选项5</option>
+            <option value="opt06">选项6</option>
+            <option value="opt07">选项7</option>
+            <option value="opt08">选项8</option>
+        </select>
+        <button>选中添加到右边</button>
+        <button>全部添加到右边</button>
+    </div>
+    <div class="right">
+        <select multiple="multiple" name="sel02">
+
+        </select>
+        <button>选中添加到左边</button>
+        <button>全部添加到左边</button>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jQuery/jquery-3.4.1/jquery-3.4.1.js"></script>
+    <script>
+
+        $(function () {
+                //组合选择器
+                let obs = $("span,div.my");//返回的数组顺序为dom对象在网页中的排列顺序
+                //  document.write(obs.length);
+                // css方法可以设置和获取样式
+                $(obs[0]).css("color", "red");
+
+                //jquery中的基本过滤器
+                $("li:first");
+                $("li:last");
+                //查找大于索引值的元素
+                $("li:gt(0)");
+                //查找小于索引值的元素
+                $("li:lt(2)");
+                //查找等于索引值的元素
+                $("li:eq(2)");
+                //所有 h1 h2 ... 的标题元素
+                $(":header");
+                //正在执行动画的元素
+                $(":animated");
+
+
+                //内容过滤器
+                //包含指定文本
+                $(":contains('content')");
+                //不包含子元素或文本
+                $(":empty");
+                //包含子元素或文本
+                $(":parent");
+                //匹配含有所给选择器过滤的
+                $("div:not(:has(p))");//匹配所有没有包含p标签的div
+
+
+                //属性过滤器
+                //有 id 属性的 div
+                $("div[id]");
+                // id 属性为“box1 的 div
+                $("div[id='box1']");
+                //所有 href 属性的值不等于 "#" 的元素
+                $("[href!='#']");
+                //所有 href 属性的值以 "#" 开头的元素
+                $("[href^='#']");
+                //包含#
+                $("[href*='#']");
+
+
+                //表单过滤
+
+                //文本框
+                $(":text");
+                //密码框
+                $(":password");
+                //复选框
+                $(":checkbox");
+                //不可见元素
+                $(":hidden");
+                //不可用
+                $(":disabled");
+                //选中
+                $(":checked");
+
+
+                //元素的筛选
+                $("li").first();//第一个
+                $("li").eq(2);//第3个
+                $("li").filter(":first");//第3个
+                $("ul").next();//当前元素的下一个兄弟元素
+                $("ul").nextUntil("span");//当前元素的下一个兄弟元素到指定元素前的元素
+
+
+
+            }
+        )
+    </script>
+</head>
+<body>
+<h1>h1</h1>
+<span>span</span>
+<div class="my">my</div>
+<div class="notmy">notmy</div>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>
